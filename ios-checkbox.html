@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2019 by y460119195 (http://jsbin.com/rexaqem/6/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+*{
+  margin:0;
+}
+input{
+  display:none;
+}
+label div{
+  width:100px;
+  height: 50px;
+  border-radius:25px;
+  background-color: #ddd;
+  padding:2px;
+  transition:background-color .5s;
+}
+label div p{
+  width:50px;
+  height: 50px;
+  border-radius:25px;
+  background-color: #fff;
+  transition:margin-left .5s;
+}
+input:checked+label div{
+  background-color: #72d74c;
+}
+input:checked+label div p{
+  width:50px;
+  height: 50px;
+  border-radius:25px;
+  background-color: #fff;
+  margin-left:50px;
+}
+</style>
+</head>
+<body>
+  <input type="checkbox" id="button">
+  <label for="button">
+    <div>
+      <p></p>
+    </div>
+  </label>
+</body>
+</html>
