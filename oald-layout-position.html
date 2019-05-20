@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+    margin: 0;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+  div{
+   background-color: #eee;
+   font-size: 0;
+  }
+  div div{
+    position: absolute;
+  }
+  div div:nth-child(1){
+    top:0;
+    bottom: 0;
+    right: 80%;
+    left: 0;
+    background-color: red;
+  }
+  div div:nth-child(2){
+    top:0;
+    bottom: 0;
+    right: 40%;
+    left: 20%;
+    background-color: orange;
+  }
+  div div:nth-child(3){
+    top:0;
+    bottom: 0;
+    right: 20%;
+    left: 60%;
+    background-color: yellow;
+  }
+  div div:nth-child(4){
+    top:0;
+    bottom: 0;
+    right: 0%;
+    left: 80%;
+    background-color: green;
+  }
+ div div main{
+   position: absolute;
+    top:0;
+    bottom:80%;
+    right: 0%;
+    left:0%;
+    background-color: blue;
+  }
+  </style>
+</head>
+<body>
+  <div>
+    <div></div>
+    <div>
+      <main></main>
+    </div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>
