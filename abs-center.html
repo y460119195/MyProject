@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    margin: 0;
+  }
+  div{
+    height: 400px;
+    width: 400px;
+    border:2px solid;
+    margin-left: 20px;
+  }
+  line{
+    display: block;
+  padding-top: 40px;
+  margin-left: 20px;
+ }
+
+ .inline{
+   text-align: center;
+   line-height: 400px;
+ }
+
+ .inline img{
+   vertical-align: middle;
+ }
+ .position{
+   position: relative;
+ }
+ .position img{
+   height: 180px;
+   width: 180px;
+   position: absolute;
+   top: 110px;
+   left: 110px;
+   right: 0;
+   bottom: 0;
+ }
+</style>
+
+<body>
+    <line>inline</line>
+  <div class="inline">
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559025146&di=1d783a5e1e0e6f0ad9b4cc2fb357e425&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fpeople%2F201108%2F03%2F20110803151013_TtxuV.jpg" alt="">
+  </div>
+  <line>position</line>
+  <div class="position">
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1559025146&di=1d783a5e1e0e6f0ad9b4cc2fb357e425&imgtype=jpg&er=1&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fpeople%2F201108%2F03%2F20110803151013_TtxuV.jpg" alt="">
+  </div>
+</body>
+</html>

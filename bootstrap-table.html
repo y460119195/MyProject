@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    .table th,
+    .table td {
+      padding: 12px;
+    }
+
+    .table tr {
+      border-top: 1px solid #dfe2e5;
+    }
+
+    .table thead tr {
+      border-bottom: 2px solid #dfe2e5;
+    }
+
+    /*table-dark*/
+    .table-dark {
+      background-color: #353a3f;
+      color: white;
+    }
+
+    .table-dark tr {
+      border-top: 1px solid #464d54;
+    }
+
+    .table-dark thead tr {
+      border-bottom: 2px solid #464d54;
+    }
+
+    /*thead-dark*/
+    .table .thead-dark tr {
+      background-color: #353a3f;
+      color: white;
+      border-bottom: 2px solid #353a3f;
+    }
+
+    /*thead-light*/
+    .table .thead-light tr {
+      background-color: #e9ecef;
+      color: #4a5056;
+      border-bottom: 2px solid #dfe2e5;
+    }
+
+    /* table-striped */
+    .table-striped tbody tr:nth-child(2n+1) {
+      background-color: #f2f2f2;
+    }
+
+    /* table-striped table-dark */
+    .table-striped.table-dark tbody tr:nth-child(2n+1) {
+      background-color: #3f4449;
+    }
+
+    /* table-bordered */
+
+    .table-dark.table-bordered td,
+    .table-dark.table-bordered th {
+      border-left: 1px solid #464d54;
+    }
+
+    .table-dark.table-bordered {
+      border-right: 1px solid #464d54;
+    }
+
+    .table-bordered td,
+    .table-bordered th {
+      border-left: 1px solid #dfe2e5;
+    }
+
+    .table-bordered {
+      border-right: 1px solid #dfe2e5;
+    }
+
+    /* table-borderless */
+    .table.table-borderless tr {
+      border: none;
+    }
+
+    .table.table-borderless td,
+    .table.table-borderless th {
+      border-left: none;
+    }
+
+    .table.table-borderless {
+      border-right: none;
+    }
+
+    /* table-hover */
+    .table-hover tbody tr:hover {
+      background-color: rgb(0, 0, 0, 0.1);
+    }
+
+    .table-dark.table-hover tbody tr:hover {
+      background-color: rgb(255, 255, 255, 0.1);
+    }
+
+    /* table-sm */
+    .table-sm th,
+    .table-sm td {
+      padding: 0px;
+    }
+  </style>
+  <style>
+    /*botton*/
+    .buttonCliked {
+      background-color: rgba(17, 43, 190, 0.556);
+      ;
+    }
+
+    /*inputGroup*/
+    .inputGroup {
+      position: relative;
+      display: table;
+      border-collapse: separate;
+      sborder: 1px solid;
+      height: 40px;
+      width:100%;
+    }
+    .form-control{
+      width: 100%;
+      float: left;
+      height: 34px;
+      border:1px solid #cfd4d9;
+      border-radius: 3px 0 0 3px;
+      font-size: 1rem;
+      outline: none;
+      z-index: 1;
+      position: relative;
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .form-control:focus,
+    .form-control:active{
+      border-color: #80bdff;
+      box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+      z-index: 3;
+    }
+    .input-group-append{
+      width:1%;
+      float: left;
+      margin-left: -1px;
+      height: 38px;
+      border-collapse: separate;
+      display: table-cell;
+    }
+
+    .dropdown-menu{
+      display: none;
+      position: absolute;
+    }
+    .btn-outline-secondary{
+      width: 100%;
+      height: 38px;
+      cursor: pointer;
+      outline: none;
+      padding-right: 20px;
+      background-color: #fff;
+      border:1px solid #6e757c;
+      border-radius: 0 3px 3px 0;
+      position: relative;
+      z-index: 2;
+      color: #6e757c;
+    }
+    .btn-outline-secondary:focus,
+    .btn-outline-secondary:active{
+      box-shadow: 0 0 0 0.2rem rgba(108,117,125,.5);
+    }
+    .btn-outline-secondary:hover{
+      background-color: #6e757c;
+      color: white;
+    }
+    .btn-outline-secondary::after{
+      content: "";
+      position: absolute;
+      top:15px;
+      right:7px;
+      height: 28px;
+      border-top:5px solid #6e757c;
+      border-left:5px solid transparent;
+      border-right:5px solid transparent;
+    }
+    .btn-outline-secondary:hover::after{
+      border-top:5px solid #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <table class="table" id="table">
+      <thead id="thead">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <div>
+    <button onclick="Btn_add_class('table','table-dark',this)">table-dark</button>
+    <button onclick="Btn_add_class('thead','thead-dark',this)">thead-dark</button>
+    <button onclick="Btn_add_class('thead','thead-light',this)">thead-light</button>
+    <button onclick="Btn_add_class('table','table-striped',this)">table-striped</button>
+    <button onclick="Btn_add_class('table','table-bordered',this)">table-bordered</button>
+    <button onclick="Btn_add_class('table','table-borderless',this)">table-borderless</button>
+    <button onclick="Btn_add_class('table','table-hover',this)">table-hover</button>
+    <button onclick="Btn_add_class('table','table-sm',this)">table-sm</button>
+    <hr>
+    <div class="inputGroup">
+      <input type="text" class="form-control" aria-label="Text input with dropdown button">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">2sssss</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div role="separator" class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    function Btn_add_class(id, className, obj) {
+      var table = document.getElementById(id);
+      if (!table.classList.contains(className)) {
+        table.classList.add(className);
+        obj.classList.add("buttonCliked");
+      } else {
+        table.classList.remove(className);
+        obj.classList.remove("buttonCliked");
+      }
+    }
+  </script>
+</body>
+
+</html>
