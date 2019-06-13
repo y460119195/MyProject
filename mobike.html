@@ -22,6 +22,12 @@
       display: block;
       text-decoration: none;
     }
+    .container{
+      position: relative;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding:  0 20px;
+    }
 
     .hero-landing {
       padding-top: 80px;
@@ -70,7 +76,7 @@
 
     .hero-promos-list {
       display: flex;
-      width: 100%;
+      width: calc(100% + 2px);
       flex-wrap: wrap;
       margin: 1px -1px 1px -1px;
       overflow: hidden;
@@ -104,6 +110,40 @@
       background-image: url(https://mobike.com/cn/assets/themes/moby/img/landing/hero-bg-8.jpg);
       background-size: cover;
       background-position: center center;
+    }
+
+    .meta-link{
+      padding: 45px 0;
+      flex-grow: 1;
+      line-height: 50px;
+    }
+    .meta-link .img{
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    }
+    .meta-link:nth-of-type(1) .img{
+      background-image: url(https://mobike.com/cn/assets/themes/moby/img/icon-wechat.png);
+    }
+    .meta-link:nth-of-type(2) .img{
+      background-image: url(https://mobike.com/cn/assets/themes/moby/img/icon-rp.png);
+    }
+    .meta-link:nth-of-type(3) .img{
+      background-image: url(https://mobike.com/cn/assets/themes/moby/img/icon-credit.png);
+    }
+    .meta-links-wrap{
+      display: flex;
+    }
+    .meta-link .img,
+    .meta-link .text{
+      display: inline-block;
+      
+    }
+    .meta-link .text p{
+      line-height: initial;
     }
   </style>
   <style>
@@ -143,6 +183,17 @@
       <a href="" class="promos"><span></span></a>
       <a href="" class="promos"><span></span></a>
     </section>
+    </div>
+    <div class="meta-links-wrap container">
+        <div class="meta-link">
+          <div class="img"></div>
+          <div class="text">
+              <p>微信小程序</p>
+              <p>微信扫一扫，直接用车</p>
+          </div>
+        </div>
+        <div class="meta-link"></div>
+        <div class="meta-link"></div>
     </div>
   </main>
 </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">
+  <button onclick="isPrime(1)">确定</button>
+  <script>
+    function isLeapYear(year){
+      if(year % 4 === 0)
+      {
+        return "shishi";
+      }else{
+        return 0;
+      }
+    }
+
+    function inputResult(){
+      var year = document.getElementsByTagName('input')[0].value;
+      if(isLeapYear(year))
+      alert(isLeapYear(year));
+      else
+      alert("bushi");
+    }
+
+    function isPrime(num){
+      for(var i = 2;i<num/2;i++)
+      {
+        if(num % i === 0)
+         return 0;
+      }
+      return 1;
+    }
+  </script>
+</body>
+</html>
