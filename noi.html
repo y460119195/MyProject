@@ -17,25 +17,25 @@ console.log(Math.floor(a/b),a%b)
 console.log(((prompt("a")|0)/(prompt("b")|0)).toFixed(9))
 </script>
 <script id="ch0103/06">
-console.log(((prompt("a")|0)/(prompt("b")|0)).toFixed(3)+"%")
+console.log(((prompt("a")|0)/(prompt("b")|0)).toFixed(3)*100+"%")
 </script>
 <script id="ch0103/07">
-var x = prompt("x")
-console.log((prompt("a")*x**3+prompt("b")*x**2+prompt("c")*x+prompt("d")).toFixed(7))
+var x = +prompt("x")
+console.log((Number(prompt("a"))*x*x*x+Number(prompt("b"))*x*x+Number(prompt("c"))*x+Number(prompt("d"))).toFixed(7))
 </script>
 <script id="ch0103/08">
 console.log((5*(prompt("F")-32)/9).toFixed(5))
 </script>
 <script  id="ch0103/09">
-var r = prompt("r")
+var r = +prompt("r")
 var pi = 3.14159
-console.log(2*r.toFixed(4),2*pi*r.toFixed(4),pi*r*r.toFixed(4))
+console.log((2*r).toFixed(4),(2*pi*r).toFixed(4),(pi*r*r).toFixed(4))
 </script>
 <script id="ch0103/10">
 console.log((1/(1/prompt("r1") + 1/prompt("r2"))).toFixed(2))
 </script>
 <script id="ch0103/11">
-console.log(prompt("a")%prompt("b"))
+console.log((prompt("a")%prompt("b")).toFixed(4))
 </script>
 <script id="ch0103/12">
  pi = 3.14
@@ -50,14 +50,14 @@ console.log(""+n%10+Math.floor(n%100/10)+Math.floor(n/100))
 console.log(Math.ceil(20/((prompt("h")|0)*(prompt("r")|0)**2*pi/1000)))
 </script>
 <script id="ch0103/15">
-console.log((prompt("n")|0)-Math.ceil((prompt("x")|0)/1*(prompt("y")|0)))
+console.log((prompt("n")|0)-Math.ceil(1/(prompt("x")|0)*(prompt("y")|0)))
 </script>
 <script id="ch0103/16">
 var Xa=prompt("Xa")
 var Ya=prompt("Ya")
 var Xb=prompt("Xb")
 var Yb=prompt("Yb")
-console.log(Math.sqrt(Math.abs(Xa-Xb)**2+Math.abs(Ya-Yb)**2))
+console.log((Math.sqrt(Math.abs(Xa-Xb)**2+Math.abs(Ya-Yb)**2)).toFixed(3))
 </script>
 <script id="ch0103/17">
 var X1=prompt("X1")
@@ -70,7 +70,7 @@ var ab=Math.sqrt(Math.abs(X1-X2)**2+Math.abs(Y1-Y2)**2)
 var bc=Math.sqrt(Math.abs(X2-X3)**2+Math.abs(Y2-Y3)**2)
 var ac=Math.sqrt(Math.abs(X1-X3)**2+Math.abs(Y1-Y3)**2)
 var p = (ab+bc+ac)/2
-console.log(Math.sqrt(p*(p-ab)*(p-bc)*(p-ac)))
+console.log((Math.sqrt(p*(p-ab)*(p-bc)*(p-ac))).toFixed(2))
 </script>
 <script id="ch0103/18">
 console.log(Math.abs((prompt("a1")|0)-(prompt("a2")|0))*((prompt("n")|0)-1)+1)
@@ -93,7 +93,7 @@ else
 console.log("negative")
 </script>
 <script id="ch0104/02">
-console.log(Math.abs(prompt("a").toFixed(2)))
+console.log(Math.abs(+prompt("a")).toFixed(2))
 </script>
 <script id="ch0104/03">
 if(prompt("n")%2 === 0)
@@ -102,7 +102,7 @@ else
 console.log("odd")
 </script>
 <script id="ch0104/04">
-if((prompt("char").charCodeAt())%2 === 0)
+if((prompt("char").charCodeAt())%2 !== 0)
 console.log("YES")
 else
 console.log("NO")
@@ -132,7 +132,7 @@ console.log("0");
 <script id="ch0104/08">
 var num = prompt("num")
 if(num % 3 === 0 && num % 5 === 0)
-console.log("YSE")
+console.log("YES")
 else
 console.log("NO")
 </script>
@@ -169,7 +169,7 @@ var distance = prompt("distance")
 var traffic = (distance/3+50)/(distance/1.2)
 if(traffic > 1)
 console.log("Walk")
-else if(traffic = 1)
+else if(traffic == 1)
 console.log("All")
 else if(traffic < 1)
 console.log("Bike")
@@ -177,7 +177,7 @@ console.log("Bike")
 <script id="ch0104/13">
 var x13 = prompt("x")
 if(x13>=0 && x13<5)
-console.log(+x13+2.5)
+console.log(-x13+2.5)
 else if(x13>=5 && x13<10)
 console.log(2-1.5*(x-3)*(x-3))
 else if(x13>=10 && x13<20)
@@ -223,20 +223,20 @@ var year = +prompt("year")
 var bool
 if(year%4 === 0)
 {
+  bool="Y"
   if(year%100 ===0 && year%400 !==0)
   {
-    if(year%3200 ===0)
+    bool="N"
+  }
+  if(year%3200 ===0)
     {
       bool="N"
     }
-    bool="N"
-  }
-  bool="Y"
 }
 console.log(bool)
 </script>
 <script id="ch0104/18">
-if(Math.abs(+prompt(X)) <=1 && Math.abs(+prompt(X))<=1)
+if(Math.abs(+prompt("x")) <=1 && Math.abs(+prompt("y"))<=1)
 console.log("yes")
 else
 console.log("no")
@@ -279,8 +279,8 @@ if(zz >= 0)
   console.log("x1="+x2+";x2="+x1)
 }else
 {
-  var x1 =( -bbb / (2*aaa))+"+"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa))+"i"
-  var x2 =( -bbb / (2*aaa))+"-"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa))+"i"
+  var x1 =( -bbb / (2*aaa)).toFixed(5)+"+"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa))+"i"
+  var x2 =( -bbb / (2*aaa)).toFixed(5)+"-"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa))+"i"
 
   console.log("x1="+x1+";x2="+x2)
 }
@@ -288,5 +288,5 @@ if(zz >= 0)
 
 </script>
 <script id="ch0104/21">
-console.log((prompt("n")|0)-Math.ceil((prompt("x")|0)/1*(prompt("y")|0)))
+console.log((prompt("n")|0)-Math.ceil(1/(prompt("x")|0)*(prompt("y")|0)))
 </script>
