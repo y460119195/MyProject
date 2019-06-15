@@ -17,7 +17,7 @@ console.log(Math.floor(a/b),a%b)
 console.log(((prompt("a")|0)/(prompt("b")|0)).toFixed(9))
 </script>
 <script id="ch0103/06">
-console.log(((prompt("a")|0)/(prompt("b")|0)).toFixed(3)*100+"%")
+console.log(((prompt("a")|0)/(prompt("b")|0*100)).toFixed(3)+"%")
 </script>
 <script id="ch0103/07">
 var x = +prompt("x")
@@ -177,11 +177,11 @@ console.log("Bike")
 <script id="ch0104/13">
 var x13 = prompt("x")
 if(x13>=0 && x13<5)
-console.log(-x13+2.5)
+console.log((-x13+2.5).toFixed(3))
 else if(x13>=5 && x13<10)
-console.log(2-1.5*(x-3)*(x-3))
+console.log((2-1.5*(x-3)*(x-3)).toFixed(3))
 else if(x13>=10 && x13<20)
-console.log(x/2-1.5)
+console.log((x/2-1.5).toFixed(3))
 </script>
 <script id="ch0104/14">
 var weight = prompt("weight")
@@ -220,7 +220,7 @@ console.log("no")
 </script>
 <script id="ch0104/17">
 var year = +prompt("year")
-var bool
+var bool = "N"
 if(year%4 === 0)
 {
   bool="Y"
@@ -271,8 +271,8 @@ var ccc = +prompt("c")
 var zz = bbb*bbb-4*aaa*ccc
 if(zz >= 0)
 {
-  var x1 = (-bbb + Math.sqrt(bbb*bbb-4*aaa*ccc))/(2*aaa)
-  var x2 = (-bbb - Math.sqrt(bbb*bbb-4*aaa*ccc))/(2*aaa)
+  var x1 = (-bbb + Math.sqrt(bbb*bbb-4*aaa*ccc))/(2*aaa).toFixed(5)
+  var x2 = (-bbb - Math.sqrt(bbb*bbb-4*aaa*ccc))/(2*aaa).toFixed(5)
   if(x1>x2)
   console.log("x1="+x1+";x2="+x2)
   else
