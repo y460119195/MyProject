@@ -17,7 +17,7 @@ console.log(Math.floor(a/b),a%b)
 console.log(((prompt("a")|0)/(prompt("b")|0)).toFixed(9))
 </script>
 <script id="ch0103/06">
-console.log((1/(prompt("b")|0)*100*(prompt("a")|0)).toFixed(3)+"%")
+console.log((1/(prompt("a")|0)*100*(prompt("b")|0)).toFixed(3)+"%")
 </script>
 <script id="ch0103/07">
 var x = +prompt("x")
@@ -279,8 +279,8 @@ if(zz >= 0)
   console.log("x1="+x2+";x2="+x1)
 }else
 {
-  var x1 =( -bbb / (2*aaa)).toFixed(5)+"+"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa))+"i"
-  var x2 =( -bbb / (2*aaa)).toFixed(5)+"-"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa))+"i"
+  var x1 =( -bbb / (2*aaa)).toFixed(5)+"+"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa)).toFixed(5)+"i"
+  var x2 =( -bbb / (2*aaa)).toFixed(5)+"-"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa)).toFixed(5)+"i"
 
   console.log("x1="+x1+";x2="+x2)
 }
