@@ -358,7 +358,7 @@
   for (var i = 1; i <= Number4; i++) {
     sum5 += (+prompt("第" + i + "个数"))
   }
-  console.log(sum5, Number((sum5 / Number4).toFixed(5)))
+  console.log(sum5, Number((sum5 / Number4)).toFixed(5))
 </script>
 
 <script id="ch0105/05">
@@ -374,14 +374,12 @@
 <script id="ch0105/06">
   var Number6 = +prompt("n")
   var max6 = 0
-  var min6 
+  var min6 = " "
   for (var i = 1; i <= Number6; i++) {
-    
     var input = +prompt("第" + i + "个数");
-    if(!!!min6){
+    if(min6 ===" "){
       min6 = input
     }else{
-    
     min6 = min6 < input ? min6 : input;
    }
    max6 = max6 > input ? max6 : input;
@@ -404,18 +402,18 @@
 <script id="ch0105/08">
   var edge = +prompt("n")
   var sumDeg = (edge - 2) * 180
-  var lastDeg = 0
   for (var i = 1; i < edge; i++) {
-    lastDeg = sumDeg - prompt("第" + i + "个角度数")
+    sumDeg = sumDeg - prompt("第" + i + "个角度数")
   }
-  console.log(lastDeg)
+  console.log(sumDeg)
 </script>
 
 <script id="ch0105/09">
 var startNum = +prompt("m")
+var endtNum = +prompt("n")
 startNum = startNum%2 ===0? startNum:startNum+1
 var sum9 = 0
-for(var i = startNum;i<+prompt("n");i+=2)
+for(var i = startNum;i<endtNum;i+=2)
 {
   sum9+=i
 }
@@ -424,9 +422,10 @@ console.log(sum9)
 
 <script id="ch0105/10">
 var startNum10 = +prompt("m")
+var endtNum10 = +prompt("n")
 startNum10 = startNum%17 ===0? startNum10:(startNum10/17|0)*17
 var sum10 = 0
-for(var i = startNum10;i<+prompt("n");i+=2)
+for(var i = startNum10;i<endtNum10;i+=17)
 {
   sum10+=i
 }
