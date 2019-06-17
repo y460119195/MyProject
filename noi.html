@@ -502,7 +502,7 @@
 
 <script id="ch0105/18">
   var Number18 = +prompt("n")
-  var achocolData = (1 / (+prompt("totalA") * (+prompt("effectA"))))
+  var achocolData = (1 / (+prompt("totalA")) * (+prompt("effectA")))
   for (var i = 1; i < Number18; i++) {
     var Data = (1 / (+prompt("total") * (+prompt("effect"))))
     var deff = Math.abs(Data - achocolData) * 100
@@ -517,18 +517,19 @@
   var Number19 = +prompt("n")
   for (var i = 1; i <= Number19; i++) {
     var distance = Math.sqrt((+prompt("x")) ** 2 + (+prompt("y")) ** 2)
-    console.log(distance / 25 + (+prompt("n")) * 2 / 3)
+    console.log (Math.ceil(distance / 25 + (+prompt("n")) * 3 / 2))
   }
 </script>
 
 <script id="ch0105/20">
   var height = +prompt("h")
-  var thisheight
+  var thisheight = 0
+  var sumHeight = height
   for (var i = 1; i <= 10; i++) {
+    sumHeight += (thisheight*2)
     thisheight = height * (0.5) ** i
-    height += thisheight
   }
-  console.log(height.toFixed(4), thisheight.toFixed(7))
+  console.log(sumHeight.toFixed(4), thisheight.toFixed(7))
 </script>
 
 <script id="ch0105/21">
@@ -536,7 +537,7 @@
   Number21 % 2 === 0 ? "even" : console.log(Number21 + "*3+1=" + (Number21 = (Number21 * 3 + 1)))
   do {
     console.log(Number21 + "/2=" + (Number21 = Number21 / 2))
-  } while (Number21 / 2 < 1)
+  } while (Number21 / 2 >= 1)
   console.log("End")
 </script>
 
