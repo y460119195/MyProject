@@ -422,7 +422,7 @@
 <script id="ch0105/10">
   var startNum10 = +prompt("m")
   var endtNum10 = +prompt("n")
-  startNum10 = startNum % 17 === 0 ? startNum10 : (Math.ceil(startNum10 / 17) * 17)
+  startNum10 = startNum10 % 17 === 0 ? startNum10 : (Math.ceil(startNum10 / 17) * 17)
   var sum10 = 0
   for (var i = startNum10; i <= endtNum10; i += 17) {
     sum10 += i
@@ -504,9 +504,9 @@
   var Number18 = +prompt("n")
   var achocolData = (1 / (+prompt("totalA")) * (+prompt("effectA")))
   for (var i = 1; i < Number18; i++) {
-    var Data = (1 / (+prompt("total") * (+prompt("effect"))))
+    var Data = (1 / (+prompt("total")) * (+prompt("effect")))
     var deff = Math.abs(Data - achocolData) * 100
-    if (deff > 5)
+    if (deff <= 5)
       console.log("same")
     else
       console.log(Data > achocolData ? "better" : "worse")
