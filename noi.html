@@ -358,7 +358,7 @@
   for (var i = 1; i <= Number4; i++) {
     sum5 += (+prompt("第" + i + "个数"))
   }
-  console.log(sum5, (sum5 / Number4).toFixed(2))
+  console.log(sum5, Number((sum5 / Number4).toFixed(5)))
 </script>
 
 <script id="ch0105/05">
@@ -373,12 +373,18 @@
 
 <script id="ch0105/06">
   var Number6 = +prompt("n")
-  var max6 = -1;
-  var min6 = -1;
+  var max6 = 0
+  var min6 
   for (var i = 1; i <= Number6; i++) {
+    
     var input = +prompt("第" + i + "个数");
-    max6 = max6 > input ? max6 : input;
+    if(!!!min6){
+      min6 = input
+    }else{
+    
     min6 = min6 < input ? min6 : input;
+   }
+   max6 = max6 > input ? max6 : input;
   }
   console.log(max6 - min6)
 </script>
@@ -399,7 +405,7 @@
   var edge = +prompt("n")
   var sumDeg = (edge - 2) * 180
   var lastDeg = 0
-  for (var i = 1; i <= edge; i++) {
+  for (var i = 1; i < edge; i++) {
     lastDeg = sumDeg - prompt("第" + i + "个角度数")
   }
   console.log(lastDeg)
