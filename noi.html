@@ -1,407 +1,406 @@
 <script id="ch0103/01">
-console.log((prompt("a")|0)+(prompt("b")|0))
+  console.log((prompt("a") | 0) + (prompt("b") | 0))
 </script>
 
 <script id="ch0103/02">
-console.log(((prompt("a")|0) + (prompt("b")|0))*(prompt("c")|0))
+  console.log(((prompt("a") | 0) + (prompt("b") | 0)) * (prompt("c") | 0))
 </script>
 
 <script id="ch0103/03">
-console.log(Math.floor(((prompt("a")|0) + (prompt("b")|0))/(prompt("c")|0)))
+  console.log(Math.floor(((prompt("a") | 0) + (prompt("b") | 0)) / (prompt("c") | 0)))
 </script>
 
 <script id="ch0103/04">
-var a = prompt("a")|0
-var b = prompt("b")|0
+  var a = prompt("a") | 0
+  var b = prompt("b") | 0
 
-console.log(Math.floor(a/b),a%b)
+  console.log(Math.floor(a / b), a % b)
 </script>
 
 <script id="ch0103/05">
-console.log(((prompt("a")|0)/(prompt("b")|0)).toFixed(9))
+  console.log(((prompt("a") | 0) / (prompt("b") | 0)).toFixed(9))
 </script>
 
 <script id="ch0103/06">
-console.log((1/(prompt("a")|0)*100*(prompt("b")|0)).toFixed(3)+"%")
+  console.log((1 / (prompt("a") | 0) * 100 * (prompt("b") | 0)).toFixed(3) + "%")
 </script>
 
 <script id="ch0103/07">
-var x = +prompt("x")
-console.log((Number(prompt("a"))*x*x*x+Number(prompt("b"))*x*x+Number(prompt("c"))*x+Number(prompt("d"))).toFixed(7))
+  var x = +prompt("x")
+  console.log((Number(prompt("a")) * x * x * x + Number(prompt("b")) * x * x + Number(prompt("c")) * x + Number(prompt(
+    "d"))).toFixed(7))
 </script>
 
 <script id="ch0103/08">
-console.log((5*(prompt("F")-32)/9).toFixed(5))
+  console.log((5 * (prompt("F") - 32) / 9).toFixed(5))
 </script>
 
-<script  id="ch0103/09">
-var r = +prompt("r")
-var pi = 3.14159
-console.log((2*r).toFixed(4),(2*pi*r).toFixed(4),(pi*r*r).toFixed(4))
+<script id="ch0103/09">
+  var r = +prompt("r")
+  var pi = 3.14159
+  console.log((2 * r).toFixed(4), (2 * pi * r).toFixed(4), (pi * r * r).toFixed(4))
 </script>
 
 <script id="ch0103/10">
-console.log((1/(1/prompt("r1") + 1/prompt("r2"))).toFixed(2))
+  console.log((1 / (1 / prompt("r1") + 1 / prompt("r2"))).toFixed(2))
 </script>
 
 <script id="ch0103/11">
-console.log((prompt("a")%prompt("b")).toFixed(4))
+  console.log((prompt("a") % prompt("b")).toFixed(4))
 </script>
 
 <script id="ch0103/12">
- pi = 3.14
-console.log((prompt("r")**3*pi*4/3).toFixed(2))
+  pi = 3.14
+  console.log((prompt("r") ** 3 * pi * 4 / 3).toFixed(2))
 </script>
 
 <script id="ch0103/13">
-var n=prompt("n")
-console.log(""+n%10+Math.floor(n%100/10)+Math.floor(n/100))
+  var n = prompt("n")
+  console.log("" + n % 10 + Math.floor(n % 100 / 10) + Math.floor(n / 100))
 </script>
 
 <script id="ch0103/14">
- pi=3.14159
-console.log(Math.ceil(20/((prompt("h")|0)*(prompt("r")|0)**2*pi/1000)))
+  pi = 3.14159
+  console.log(Math.ceil(20 / ((prompt("h") | 0) * (prompt("r") | 0) ** 2 * pi / 1000)))
 </script>
 
 <script id="ch0103/15">
-console.log((prompt("n")|0)-Math.ceil(1/(prompt("x")|0)*(prompt("y")|0)))
+  console.log((prompt("n") | 0) - Math.ceil(1 / (prompt("x") | 0) * (prompt("y") | 0)))
 </script>
 
 <script id="ch0103/16">
-var Xa=prompt("Xa")
-var Ya=prompt("Ya")
-var Xb=prompt("Xb")
-var Yb=prompt("Yb")
-console.log((Math.sqrt(Math.abs(Xa-Xb)**2+Math.abs(Ya-Yb)**2)).toFixed(3))
+  var Xa = prompt("Xa")
+  var Ya = prompt("Ya")
+  var Xb = prompt("Xb")
+  var Yb = prompt("Yb")
+  console.log((Math.sqrt(Math.abs(Xa - Xb) ** 2 + Math.abs(Ya - Yb) ** 2)).toFixed(3))
 </script>
 
 <script id="ch0103/17">
-var X1=prompt("X1")
-var Y1=prompt("Y1")
-var X2=prompt("X2")
-var Y2=prompt("Y2")
-var X3=prompt("X3")
-var Y3=prompt("Y3")
-var ab=Math.sqrt(Math.abs(X1-X2)**2+Math.abs(Y1-Y2)**2)
-var bc=Math.sqrt(Math.abs(X2-X3)**2+Math.abs(Y2-Y3)**2)
-var ac=Math.sqrt(Math.abs(X1-X3)**2+Math.abs(Y1-Y3)**2)
-var p = (ab+bc+ac)/2
-console.log((Math.sqrt(p*(p-ab)*(p-bc)*(p-ac))).toFixed(2))
+  var X1 = prompt("X1")
+  var Y1 = prompt("Y1")
+  var X2 = prompt("X2")
+  var Y2 = prompt("Y2")
+  var X3 = prompt("X3")
+  var Y3 = prompt("Y3")
+  var ab = Math.sqrt(Math.abs(X1 - X2) ** 2 + Math.abs(Y1 - Y2) ** 2)
+  var bc = Math.sqrt(Math.abs(X2 - X3) ** 2 + Math.abs(Y2 - Y3) ** 2)
+  var ac = Math.sqrt(Math.abs(X1 - X3) ** 2 + Math.abs(Y1 - Y3) ** 2)
+  var p = (ab + bc + ac) / 2
+  console.log((Math.sqrt(p * (p - ab) * (p - bc) * (p - ac))).toFixed(2))
 </script>
 
 <script id="ch0103/18">
-console.log(Math.abs((prompt("a1")|0)-(prompt("a2")|0))*((prompt("n")|0)-1)+1)
+  console.log(Math.abs((prompt("a1") | 0) - (prompt("a2") | 0)) * ((prompt("n") | 0) - 1) + 1)
 </script>
 
 <script id="ch0103/19">
-console.log(prompt("a")*prompt("b"))
+  console.log(prompt("a") * prompt("b"))
 </script>
 
 <script id="ch0103/20">
-console.log(2**(prompt("n")|0))
+  console.log(2 ** (prompt("n") | 0))
 </script>
 
 <!--------------------------------------->
 
 
 <script id="ch0104/01">
-var N = prompt("N")
-if(N>0)
-console.log("positive")
-else if(N==0)
-console.log("zero")
-else
-console.log("negative")
+  var N = prompt("N")
+  if (N > 0)
+    console.log("positive")
+  else if (N == 0)
+    console.log("zero")
+  else
+    console.log("negative")
 </script>
 
 <script id="ch0104/02">
-console.log(Math.abs(+prompt("a")).toFixed(2))
+  console.log(Math.abs(+prompt("a")).toFixed(2))
 </script>
 
 <script id="ch0104/03">
-if(prompt("n")%2 === 0)
-console.log("even")
-else
-console.log("odd")
+  if (prompt("n") % 2 === 0)
+    console.log("even")
+  else
+    console.log("odd")
 </script>
 
 <script id="ch0104/04">
-if((prompt("char").charCodeAt())%2 !== 0)
-console.log("YES")
-else
-console.log("NO")
+  if ((prompt("char").charCodeAt()) % 2 !== 0)
+    console.log("YES")
+  else
+    console.log("NO")
 </script>
 
 <script id="ch0104/05">
-var minus = prompt("x")-prompt("y")
-if(minus>0)
-console.log(">")
-else if(minus === 0)
-console.log("=")
-else
-console.log("<")
+  var minus = prompt("x") - prompt("y")
+  if (minus > 0)
+    console.log(">")
+  else if (minus === 0)
+    console.log("=")
+  else
+    console.log("<")
 </script>
 
 <script id="ch0104/06">
-var xx=(prompt("n")|0)
-if(xx>=10 && xx<=99)
-console.log("1")
-else
-console.log("0")
+  var xx = (prompt("n") | 0)
+  if (xx >= 10 && xx <= 99)
+    console.log("1")
+  else
+    console.log("0")
 </script>
 
 <script id="ch0104/07">
-if(prompt("lucky")>=10||prompt("encourage")>=20)
-console.log("1")
-else
-console.log("0");
+  if (prompt("lucky") >= 10 || prompt("encourage") >= 20)
+    console.log("1")
+  else
+    console.log("0");
 </script>
 
 <script id="ch0104/08">
-var num = prompt("num")
-if(num % 3 === 0 && num % 5 === 0)
-console.log("YES")
-else
-console.log("NO")
+  var num = prompt("num")
+  if (num % 3 === 0 && num % 5 === 0)
+    console.log("YES")
+  else
+    console.log("NO")
 </script>
 
 <script id="ch0104/09">
-var num2 = prompt("num")
-var result = new Array()
- 
-if(num2%3 ===0)
-result.push("3")
-if(num2%5 ===0)
-result.push("5")
-if(num2%7===0)
-result.push("7")
-if(result.length ===0)
-result = "n"
-for (var list in result){
-  console.log(result[list])
-}
+  var num2 = prompt("num")
+  var result = new Array()
+
+  if (num2 % 3 === 0)
+    result.push("3")
+  if (num2 % 5 === 0)
+    result.push("5")
+  if (num2 % 7 === 0)
+    result.push("7")
+  if (result.length === 0)
+    result = "n"
+  for (var list in result) {
+    console.log(result[list])
+  }
 </script>
 
 <script id="ch0104/10">
-if(prompt("Chinese")< 60 ||prompt("Math")< 60)
-console.log("1")
-else
-console.log("0")
+  if (prompt("Chinese") < 60 || prompt("Math") < 60)
+    console.log("1")
+  else
+    console.log("0")
 </script>
 
 <script id="ch0104/11">
-if((prompt("WeekDay")|0)%2 === 0)
-console.log("YES")
-else
-console.log("NO")
+  if ((prompt("WeekDay") | 0) % 2 === 0)
+    console.log("YES")
+  else
+    console.log("NO")
 </script>
 
 <script id="ch0104/12">
-var distance = prompt("distance")
-var traffic = (distance/3+50)/(distance/1.2)
-if(traffic > 1)
-console.log("Walk")
-else if(traffic == 1)
-console.log("All")
-else if(traffic < 1)
-console.log("Bike")
+  var distance = prompt("distance")
+  var traffic = (distance / 3 + 50) / (distance / 1.2)
+  if (traffic > 1)
+    console.log("Walk")
+  else if (traffic == 1)
+    console.log("All")
+  else if (traffic < 1)
+    console.log("Bike")
 </script>
 
 <script id="ch0104/13">
-var x13 = prompt("x")
-if(x13>=0 && x13<5)
-console.log((-x13+2.5).toFixed(3))
-else if(x13>=5 && x13<10)
-console.log((2-2/3*(x-3)*(x-3)).toFixed(3))
-else if(x13>=10 && x13<20)
-console.log((x/2-2/3).toFixed(3))
+  var x13 = prompt("x")
+  if (x13 >= 0 && x13 < 5)
+    console.log((-x13 + 2.5).toFixed(3))
+  else if (x13 >= 5 && x13 < 10)
+    console.log((2 - 2 / 3 * (x - 3) * (x - 3)).toFixed(3))
+  else if (x13 >= 10 && x13 < 20)
+    console.log((x / 2 - 2 / 3).toFixed(3))
 </script>
 
 <script id="ch0104/14">
-var weight = prompt("weight")
-var price
-if(weight<=1000)
-price =8
-else {
-  price = 8 + Math.ceil((weight-1000)/200)*4
-}
-if(prompt("加急") === "y")
-price+=5;
-console.log(price)
-
+  var weight = prompt("weight")
+  var price
+  if (weight <= 1000)
+    price = 8
+  else {
+    price = 8 + Math.ceil((weight - 1000) / 200) * 4
+  }
+  if (prompt("加急") === "y")
+    price += 5;
+  console.log(price)
 </script>
 
 <script id="ch0104/15">
-function maxmax(x1,x2){
-  if(x1>x2)
-  return x1
-  else
-  return x2
-}
-var max = maxmax(prompt("number1"),prompt("number2"))
-max = maxmax(max,prompt("number3"))
-console.log(max)
+  function maxmax(x1, x2) {
+    if (x1 > x2)
+      return x1
+    else
+      return x2
+  }
+  var max = maxmax(prompt("number1"), prompt("number2"))
+  max = maxmax(max, prompt("number3"))
+  console.log(max)
 </script>
 
 <script id="ch0104/16">
-var list = new Array();
-list.push(+prompt("number1"))
-list.push(+prompt("number2"))
-list.push(+prompt("number3"))
-list.sort();
-if((+list[0]+list[1] )>list[2] )
-console.log("yes")
-else
-console.log("no")
+  var list = new Array();
+  list.push(+prompt("number1"))
+  list.push(+prompt("number2"))
+  list.push(+prompt("number3"))
+  list.sort();
+  if ((+list[0] + list[1]) > list[2])
+    console.log("yes")
+  else
+    console.log("no")
 </script>
 
 <script id="ch0104/17">
-var year = +prompt("year")
-var bool = "N"
-if(year%4 === 0)
-{
-  bool="Y"
-  if(year%100 ===0 && year%400 !==0)
-  {
-    bool="N"
-  }
-  if(year%3200 ===0)
-    {
-      bool="N"
+  var year = +prompt("year")
+  var bool = "N"
+  if (year % 4 === 0) {
+    bool = "Y"
+    if (year % 100 === 0 && year % 400 !== 0) {
+      bool = "N"
     }
-}
-console.log(bool)
+    if (year % 3200 === 0) {
+      bool = "N"
+    }
+  }
+  console.log(bool)
 </script>
 
 <script id="ch0104/18">
-if(Math.abs(+prompt("x")) <=1 && Math.abs(+prompt("y"))<=1)
-console.log("yes")
-else
-console.log("no")
+  if (Math.abs(+prompt("x")) <= 1 && Math.abs(+prompt("y")) <= 1)
+    console.log("yes")
+  else
+    console.log("no")
 </script>
 
 <script id="ch0104/19">
-var num1 = +prompt("number1")
-var num2 = +prompt("number2")
-var string = prompt("操作符")
-switch(string)
-{
-  case("+"):
-  console.log(num1+num2);
-  break;
-  case("-"):
-  console.log(num1-num2);
-  break;
-  case("*"):
-  console.log(num1*num2);
-  break;
-  case("/"):
-  console.log(num1/num2);
-  break;
-  default:
-  console.log("Invalid operator!");
-  break;
-}
+  var num1 = +prompt("number1")
+  var num2 = +prompt("number2")
+  var string = prompt("操作符")
+  switch (string) {
+    case ("+"):
+      console.log(num1 + num2);
+      break;
+    case ("-"):
+      console.log(num1 - num2);
+      break;
+    case ("*"):
+      console.log(num1 * num2);
+      break;
+    case ("/"):
+      console.log(num1 / num2);
+      break;
+    default:
+      console.log("Invalid operator!");
+      break;
+  }
 </script>
 
 <script id="ch0104/20">
-var aaa = +prompt("a")
-var bbb = +prompt("b")
-var ccc = +prompt("c")
-var zz = bbb*bbb-4*aaa*ccc
-if(zz >= 0)
-{
-  var x1 = (-bbb + Math.sqrt(bbb*bbb-4*aaa*ccc))/(2*aaa).toFixed(5)
-  var x2 = (-bbb - Math.sqrt(bbb*bbb-4*aaa*ccc))/(2*aaa).toFixed(5)
-  if(x1>x2)
-  console.log("x1="+x1+";x2="+x2)
-  else
-  console.log("x1="+x2+";x2="+x1)
-}else
-{
-  var x1 =( -bbb / (2*aaa)).toFixed(5)+"+"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa)).toFixed(5)+"i"
-  var x2 =( -bbb / (2*aaa)).toFixed(5)+"-"+(Math.sqrt(4*aaa*ccc-bbb*bbb) / (2*aaa)).toFixed(5)+"i"
+  var aaa = +prompt("a")
+  var bbb = +prompt("b")
+  var ccc = +prompt("c")
+  var zz = bbb * bbb - 4 * aaa * ccc
+  if (zz >= 0) {
+    var x1 = (-bbb + Math.sqrt(bbb * bbb - 4 * aaa * ccc)) / (2 * aaa).toFixed(5)
+    var x2 = (-bbb - Math.sqrt(bbb * bbb - 4 * aaa * ccc)) / (2 * aaa).toFixed(5)
+    if (x1 > x2)
+      console.log("x1=" + x1 + ";x2=" + x2)
+    else
+      console.log("x1=" + x2 + ";x2=" + x1)
+  } else {
+    var x1 = (-bbb / (2 * aaa)).toFixed(5) + "+" + (Math.sqrt(4 * aaa * ccc - bbb * bbb) / (2 * aaa)).toFixed(5) + "i"
+    var x2 = (-bbb / (2 * aaa)).toFixed(5) + "-" + (Math.sqrt(4 * aaa * ccc - bbb * bbb) / (2 * aaa)).toFixed(5) + "i"
 
-  console.log("x1="+x1+";x2="+x2)
-}
-
+    console.log("x1=" + x1 + ";x2=" + x2)
+  }
 </script>
 
 <script id="ch0104/21">
-console.log((prompt("n")|0)-Math.ceil(1/(prompt("x")|0)*(prompt("y")|0)))
+  console.log((prompt("n") | 0) - Math.ceil(1 / (prompt("x") | 0) * (prompt("y") | 0)))
 </script>
 
 <!--------------------------------------->
 
 <script id="ch0105/01">
-var studentNumber = +prompt("n")
-var sum2
-for(var i =1 ;1 <= studentNumber ;i++)
-{
-  sum2 += prompt("第"+i+"个人成绩")
-}
-console.log((sum2/studentNumber).toFixed(2))
+  var studentNumber = +prompt("n")
+  var sum2 = 0
+  for (var i = 1; i <= studentNumber; i++) {
+    sum2 += (+prompt("第" + i + "个人成绩"))
+  }
+  console.log((sum2 / studentNumber).toFixed(2))
 </script>
 
 <script id="ch0105/02">
-var sum3
-for(var i =1 ;1 <= 12 ;i++)
-{
-  sum3 += prompt("第"+i+"个月")
-}
-console.log("$"+(sum3/12).toFixed(2))
+  var sum3 = 0
+  for (var i = 1; i <= 12; i++) {
+    sum3 += (+prompt("第" + i + "个数"))
+  }
+  console.log("$" + (sum3 / 12).toFixed(2))
 </script>
 
 <script id="ch0105/03">
-var sNumber = +prompt("n")
-var sum4
-for(var i =1 ;1 <= sNumber ;i++)
-{
-  sum4 += prompt("第"+i+"个数")
-}
-console.log((sum4/sNumber).toFixed(2))
+  var sNumber = +prompt("n")
+  var sum4 = 0
+  for (var i = 1; i <= sNumber; i++) {
+    sum4 += (+prompt("第" + i + "个数"))
+  }
+  console.log((sum4 / sNumber).toFixed(2))
 </script>
 
 <script id="ch0105/04">
-var ssNumber = +prompt("n")
-var sum5
-for(var i =1 ;1 <= ssNumber ;i++)
-{
-  sum5 += prompt("第"+i+"个数")
-}
-console.log(sum5,(sum5/ssNumber).toFixed(2))
+  var ssNumber = +prompt("n")
+  var sum5 = 0
+  for (var i = 1; i <= ssNumber; i++) {
+    sum5 += (+prompt("第" + i + "个数"))
+  }
+  console.log(sum5, (sum5 / ssNumber).toFixed(2))
 </script>
 
 <script id="ch0105/05">
-var Number5 = +prompt("n")
-var max5 = -1;
-for(var i =1 ;1 <= Number5 ;i++)
-{
-  var num10505 = +prompt("第"+i+"个数");
-  max5 = max5>num10505?max5:num10505;
-}
-console.log(max5)
+  var Number5 = +prompt("n")
+  var max5 = -1;
+  for (var i = 1; i <= Number5; i++) {
+    var input = +prompt("第" + i + "个数");
+    max5 = max5 > input ? max5 : input;
+  }
+  console.log(max5)
 </script>
 
 <script id="ch0105/06">
-var Number6 = +prompt("n")
-var max6 = -1;
-var min6 = -1;
-for(var i =1 ;1 <= Number6 ;i++)
-{
-  var num10506 = +prompt("第"+i+"个数");
-  max5 = max5>num10506?max5:num10506;
-  min5 = min5<num10506?min5:num10506;
-}
-console.log(max6-min6)
+  var Number6 = +prompt("n")
+  var max6 = -1;
+  var min6 = -1;
+  for (var i = 1; i <= Number6; i++) {
+    var input = +prompt("第" + i + "个数");
+    max6 = max6 > input ? max5 : input;
+    min6 = min6 < input ? min5 : input;
+  }
+  console.log(max6 - min6)
 </script>
 
 <script id="ch0105/07">
-
+  var Number7 = +prompt("n")
+  var gold = 0
+  var silver = 0
+  var copper = 0
+  var sum7 = 0
+  for (var i = 1; i <= Number7; i++) {
+    var input = +prompt("第" + i + "个数");
+  }
 </script>
 
 <script id="ch0105/08">
-
+  var edge = +prompt("n")
+  var sumDeg = (edge - 2) * 180
+  var lastDeg
+  for (var i = 1; i <= edge; i++) {
+    lastDeg = sumDeg - prompt("第" + i + "个角度数")
+  }
 </script>
 
 <script id="ch0105/09">
@@ -551,4 +550,3 @@ console.log(max6-min6)
 <script id="ch0105/45">
 
 </script>
-
