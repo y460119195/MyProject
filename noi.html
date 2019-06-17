@@ -377,12 +377,12 @@
   var min6 = " "
   for (var i = 1; i <= Number6; i++) {
     var input = +prompt("第" + i + "个数");
-    if(min6 ===" "){
+    if (min6 === " ") {
       min6 = input
-    }else{
-    min6 = min6 < input ? min6 : input;
-   }
-   max6 = max6 > input ? max6 : input;
+    } else {
+      min6 = min6 < input ? min6 : input;
+    }
+    max6 = max6 > input ? max6 : input;
   }
   console.log(max6 - min6)
 </script>
@@ -409,167 +409,332 @@
 </script>
 
 <script id="ch0105/09">
-var startNum = +prompt("m")
-var endtNum = +prompt("n")
-startNum = startNum%2 ===0? startNum:startNum+1
-var sum9 = 0
-for(var i = startNum;i<=endtNum;i+=2)
-{
-  sum9+=i
-}
-console.log(sum9)
+  var startNum = +prompt("m")
+  var endtNum = +prompt("n")
+  startNum = startNum % 2 === 0 ? startNum : startNum + 1
+  var sum9 = 0
+  for (var i = startNum; i <= endtNum; i += 2) {
+    sum9 += i
+  }
+  console.log(sum9)
 </script>
 
 <script id="ch0105/10">
-var startNum10 = +prompt("m")
-var endtNum10 = +prompt("n")
-startNum10 = startNum%17 ===0? startNum10:(startNum10/17|0)*17
-var sum10 = 0
-for(var i = startNum10;i<=endtNum10;i+=17)
-{
-  sum10+=i
-}
-console.log(sum10)
+  var startNum10 = +prompt("m")
+  var endtNum10 = +prompt("n")
+  startNum10 = startNum % 17 === 0 ? startNum10 : (startNum10 / 17 | 0) * 17
+  var sum10 = 0
+  for (var i = startNum10; i <= endtNum10; i += 17) {
+    sum10 += i
+  }
+  console.log(sum10)
 </script>
 
 <script id="ch0105/11">
-var Number11 = +prompt("k")
-var numofone =0
-var numoffive =0
-var numoften =0
+  var Number11 = +prompt("k")
+  var numofone = 0
+  var numoffive = 0
+  var numoften = 0
   for (var i = 1; i <= Number11; i++) {
     var input = +prompt("第" + i + "个数");
-    if(input === 1)
-    numofone++
-    else if(input === 5)
-    numoffive++
-    else if(input === 10)
-    numoften++
+    if (input === 1)
+      numofone++
+    else if (input === 5)
+      numoffive++
+    else if (input === 10)
+      numoften++
   }
-console.log(numofone,numoffive,numoften)
+  console.log(numofone, numoffive, numoften)
 </script>
 
 <script id="ch0105/12">
-var Number12 = +prompt("N")
-var numSearch = +prompt("m")
-var sum12 = 0
-for (var i = 1; i <= Number12; i++) {
-  var input = +prompt("第" + i + "个数");
-    if(input === numSearch)
-    sum12++
-}
-console.log(sum12)
+  var Number12 = +prompt("N")
+  var numSearch = +prompt("m")
+  var sum12 = 0
+  for (var i = 1; i <= Number12; i++) {
+    var input = +prompt("第" + i + "个数");
+    if (input === numSearch)
+      sum12++
+  }
+  console.log(sum12)
 </script>
 
 <script id="ch0105/13">
-console.log((+prompt("a")|0)**(+prompt("n")))
+  console.log((+prompt("a") | 0) ** (+prompt("n")))
 </script>
 
 <script id="ch0105/14">
-console.log((+prompt("x")|0)*(0.001)**(+prompt("n")).toFixed(4))
+  console.log((+prompt("x") | 0) * (0.001) ** (+prompt("n")).toFixed(4))
 </script>
 
 <script id="ch0105/15">
-var R = +prompt("R")
-var M = +prompt("M")
-var Y = +prompt("Y")
-console.log(Math.floor(R**Y*M))
+  var R = +prompt("R")
+  var M = +prompt("M")
+  var Y = +prompt("Y")
+  console.log(Math.floor(R ** Y * M))
 </script>
 
 <script id="ch0105/16">
-var N = +prompt("N")
-var k = +prompt("k")
-for(var i = 1 ;i<=20 ;i++)
-{
-  if(N*i>200*(k/100)**i){
-    console.log(i)
-    break;
+  var N = +prompt("N")
+  var k = +prompt("k")
+  var result16 = "impossible"
+  for (var i = 1; i <= 20; i++) {
+    if (N * i > 200 * (k / 100) ** i) {
+      result16 = i
+      break;
+    }
   }
-}
-console.log("impossible")
+  console.log(result16)
 </script>
 
 <script id="ch0105/17">
-
+  var Number17 = +prompt("k")
+  var n_1 = 1
+  var n_2 = 1
+  var sum17 = 0
+  for (var i = 1; i < (Number17 - 1); i++) {
+    sum17 = n_1 + n_2
+    n_2 = n_1
+    n_1 = sum17
+  }
+  console.log(sum17)
 </script>
 
 <script id="ch0105/18">
-
+  var Number18 = +prompt("n")
+  var achocolData = (1 / (+prompt("totalA") * (+prompt("effectA"))))
+  for (var i = 1; i < Number18; i++) {
+    var Data = (1 / (+prompt("total") * (+prompt("effect"))))
+    var deff = Math.abs(Data - achocolData) * 100
+    if (deff > 5)
+      console.log("same")
+    else
+      console.log(Data > achocolData ? "better" : "worse")
+  }
 </script>
 
 <script id="ch0105/19">
-
+  var Number19 = +prompt("n")
+  for (var i = 1; i <= Number19; i++) {
+    var distance = Math.sqrt((+prompt("x")) ** 2 + (+prompt("y")) ** 2)
+    console.log(distance / 25 + (+prompt("n")) * 2 / 3)
+  }
 </script>
 
 <script id="ch0105/20">
-
+  var height = +prompt("h")
+  var thisheight
+  for (var i = 1; i <= 10; i++) {
+    thisheight = height * (0.5) ** i
+    height += thisheight
+  }
+  console.log(height.toFixed(4), thisheight.toFixed(7))
 </script>
 
 <script id="ch0105/21">
-
+  var Number21 = +prompt("n")
+  Number21 % 2 === 0 ? "even" : console.log(Number21 + "*3+1=" + (Number21 = (Number21 * 3 + 1)))
+  do {
+    console.log(Number21 + "/2=" + (Number21 = Number21 / 2))
+  } while (Number21 / 2 < 1)
+  console.log("End")
 </script>
 
 <script id="ch0105/22">
-
+  var sum22
+  var balance = 0
+  var result22
+  for (var i = 1; i < 13; i++) {
+    balance += 300
+    var budget = (+prompt(i + "月预算"))
+    balance = balance - budget
+    if (balance < 0) {
+      result22 = -i
+      break;
+    } else {
+      sum22 += Math.floor(balance / 100) * 100
+      balance = balance % 100
+      result22 = balance + sum22 * 1.2
+    }
+  }
+  console.log(result22)
 </script>
 
 <script id="ch0105/23">
-
+  var totalPill = +prompt("m")
+  var Number23 = +prompt("n")
+  var noPill = 0
+  for (var i = 1; i <= Number23; i++) {
+    var pill = +prompt("pill")
+    if (totalPill < pill) {
+      noPill++
+    } else
+      totalPill = totalPill - pill
+  }
+  console.log(noPill)
 </script>
 
 <script id="ch0105/24">
-
+  var Number24 = +prompt("n")
+  var hour = 0
+  for (var i = 1; i <= Number24; i++) {
+    var a1 = prompt("shousuo")
+    var a2 = prompt("shuzhang")
+    if (a1 >= 90 && a1 <= 140 && a2 >= 60 && a2 <= 90) {
+      hour++
+    } else
+      hour = 0
+  }
+  console.log(hour)
 </script>
 
 <script id="ch0105/25">
-
+  for (var a = 0; a < 7; a++) {
+    for (var b = 0; b < 7; b++) {
+      for (var b = 0; b < 7; b++) {
+        if ((a * 49 + b * 7 + c) === (a + b * 9 + c * 81))
+          console.log(a * 49 + b * 7 + c)
+      }
+    }
+  }
 </script>
 
 <script id="ch0105/26">
-
+var Number26 = +prompt("n")
+var count
+  for (var i = 1; i <= Number26; i++) {
+    var numm = +prompt("n")
+    if((Math.floor(numm/1000)+Math.floor(numm%1000/100)+Math.floor(numm%100/10))< numm%10)
+    count++
+  }
+  console.log(count)
 </script>
 
 <script id="ch0105/27">
-
+var Number27 =+prompt("K")
+var sum27 = 0
+var ccount
+for(ccount = 0; sum27<Number27;ccount++)
+{
+  sum27+=(1/i)
+}
+console.log(ccount)
 </script>
 
 <script id="ch0105/28">
-
+var Number28 =+prompt("K")
+for(var i = 0;Number28>=1;i++)
+{
+  console.log(Number28=Number28%10)
+}
 </script>
 
 <script id="ch0105/29">
-
+var Number29 =+prompt("N")
+var output
+if(Number29<0)
+output+="-"
+for(var i = 0;Number29>=1;i++)
+{
+  output+=String(Number29=Number29%10)
+}
+console.log(Number(output))
 </script>
 
 <script id="ch0105/30">
-
+var Number30 =+prompt("N")
+var count_3 = 0
+if(Number30%19 ===0){
+  for(var i = 0;Number30>=1;i++)
+  {
+    Number30%10 === 3?count_3++:"not3";
+  }
+  count_3>2?console.log("YES"):console.log("NO")
+}
+else
+console.log("NO")
 </script>
 
 <script id="ch0105/31">
-
+var Number31 =+prompt("N")
+var numofpeople =+prompt("M")
+var factor = 0
+for(var i = 1 ;i<=Number31;i++)
+{
+  for (var x = 1 ;x<=i&&x<=numofpeople;x++)
+  {
+    if(i%x ===0)
+    factor++
+  }
+  if(factor%2 !==0)
+  console.log(i)
+}
 </script>
 
 <script id="ch0105/32">
-
+var Number32 =+prompt("N")
+var sum32 = 0
+var nn_2 = 1
+var nn_1 = 2
+for(var i = 1 ;i<=Number32;i++)
+{
+  var nn = nn_1+nn_2
+  sum32 +=(nn/nn_1)
+  nn_2 = nn_1
+  nn_1 = nn
+}
+console.log(sum32.toFixed(4))
 </script>
 
 <script id="ch0105/33">
-
+var Number33 =+prompt("N")
+var sum33 = 0
+for(var i = 1 ;i<=Number33;i++)
+{
+  sum33 +=(-1)**i*1/i
+}
+console.log(sum33.toFixed(4))
 </script>
 
 <script id="ch0105/34">
-
+var Number34 =+prompt("N")
+var sum34 = 0
+var nnn_1 = 1
+for(var i = 1 ;i<=Number34;i++)
+{
+  nnn_1 = i*nnn_1
+  sum34 += nnn_1
+}
+console.log(sum34)
 </script>
 
 <script id="ch0105/35">
-
+var Number35 =+prompt("N")
+var sum35 = 0
+var nnn_1 = 1
+for(var i = 1 ;i<=Number35;i++)
+{
+  nnn_1 = i*nnn_1
+  sum35 += 1/nnn_1
+}
+console.log(sum35)
 </script>
 
 <script id="ch0105/36">
-
+var Number36 =+prompt("x")
+var count36 = +prompt("n")
+var sum36 = 0
+for(var i = 1 ;i<=count36;i++)
+{
+  sum36 += Number36**i
+}
+console.log(sum36.toFixed(2))
 </script>
 
 <script id="ch0105/37">
+var M =+prompt("M")
+var N =+prompt("N")
+var X =+prompt("X")
 
 </script>
 
@@ -582,25 +747,129 @@ console.log("impossible")
 </script>
 
 <script id="ch0105/40">
-
+var Number40 =+prompt("n")
+var count_1 = 0
+for(var i = 1 ;i<=Number40;i++)
+{
+  var num40 =i;
+  for(;num40>=10;)
+  {
+  num40%10 ===1?count_1++:""
+  num40 = Math.floor(num40/10) 
+  }
+}
+console.log(count_1)
 </script>
 
 <script id="ch0105/41">
-
+var startNum =+prompt("L")
+var endNum =+prompt("R")
+var count_2 = 0
+for(var i = startNum ;i<=endNum;i++)
+{
+  var num41 =i;
+  for(;num41>=10;)
+  {
+  num41%10 ===2?count_2++:""
+  num41 = Math.floor(num41/10) 
+  }
+}
+console.log(count_2)
 </script>
 
 <script id="ch0105/42">
-
+var height =+prompt("height")
+var width =+prompt("width")
+var sign =+prompt("sign")
+var style =+prompt("style")
+var row
+for(var i = 1 ;i<=height;i++)
+{
+  row = ""
+  if(i===1 ||i===height){
+    for(var w = 1 ;w<=width;w++)
+    {
+      row += sign
+    }
+    console.log(row)
+  }else{
+    for(var w = 1 ;w<=width;w++)
+    {
+      if(w===1 ||w===width){
+        row += sign
+      }else{
+        row+= " "
+      }
+    }
+    console.log(row)
+  }
+}
 </script>
 
 <script id="ch0105/43">
+function isPrime(int){
+  for(var i = 2 ;i<=Math.sqrt(int);i++)
+  {
+    if(i%x === 0)
+    return 0;
+  }
+  return 1;
+}
+var Number43 =+prompt("n")
+var result43 = "null"
+for(var i =1 ;i<= Math.sqrt(Number43);i++)
+{
 
+  if(isPrime(i)&&Number43%i ===0)
+  {
+    result43 = Number43/i
+    break;
+  }
+}
+console.log(result43)
 </script>
 
 <script id="ch0105/44">
+function isPrime(int){
+  for(var i = 2 ;i<=Math.sqrt(int);i++)
+  {
+    if(i%x === 0)
+    return 0;
+  }
+  return 1;
+}
 
+var Number44 =+prompt("n")
+var result44 = 0
+var count44= 0
+for(var i =1 ;count44<=Number44;i++)
+{
+  if(isPrime(i))
+  {
+    count44++
+    result44 = i
+  }
+}
+console.log(result44)
 </script>
 
 <script id="ch0105/45">
+var Number45 =+prompt("n")
+var date = 0
+var coin = 0
+for(var i =1 ; ;i++)
+{
+if(i*(i+1)>2*Number45)
+{
+  date=i
+break;
+}
 
+}
+for(var i =1 ;i<=date;i++)
+{
+  coin+= i**2
+}
+var extra = (date+1)*date - Number45
+console.log(+coin+(extra*date))
 </script>
