@@ -412,11 +412,25 @@
 </script>
 
 <script id="ch0105/09">
-
+var startNum = +prompt("m")
+startNum = startNum%2 ===0? startNum:startNum+1
+var sum9 = 0
+for(var i = startNum;i<+prompt("n");i+=2)
+{
+  sum9+=i
+}
+console.log(sum9)
 </script>
 
 <script id="ch0105/10">
-
+var startNum10 = +prompt("m")
+startNum10 = startNum%17 ===0? startNum10:(startNum10/17|0)*17
+var sum10 = 0
+for(var i = startNum10;i<+prompt("n");i+=2)
+{
+  sum10+=i
+}
+console.log(sum10)
 </script>
 
 <script id="ch0105/11">
