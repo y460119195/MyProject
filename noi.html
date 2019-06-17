@@ -411,7 +411,7 @@
 <script id="ch0105/09">
   var startNum = +prompt("m")
   var endtNum = +prompt("n")
-  startNum = startNum % 2 === 0 ? startNum : startNum + 1
+  startNum = startNum % 2 === 0 ? startNum+1 : startNum 
   var sum9 = 0
   for (var i = startNum; i <= endtNum; i += 2) {
     sum9 += i
@@ -422,7 +422,7 @@
 <script id="ch0105/10">
   var startNum10 = +prompt("m")
   var endtNum10 = +prompt("n")
-  startNum10 = startNum % 17 === 0 ? startNum10 : (startNum10 / 17 | 0) * 17
+  startNum10 = startNum % 17 === 0 ? startNum10 : (Math.ceil(startNum10 / 17) * 17)
   var sum10 = 0
   for (var i = startNum10; i <= endtNum10; i += 17) {
     sum10 += i
@@ -464,14 +464,14 @@
 </script>
 
 <script id="ch0105/14">
-  console.log((+prompt("x") | 0) * (0.001) ** (+prompt("n")).toFixed(4))
+  console.log(((+prompt("x") | 0) * (1.001) ** (+prompt("n"))).toFixed(4))
 </script>
 
 <script id="ch0105/15">
   var R = +prompt("R")
   var M = +prompt("M")
   var Y = +prompt("Y")
-  console.log(Math.floor(R ** Y * M))
+  console.log(Math.floor((1+R/100) ** Y * M))
 </script>
 
 <script id="ch0105/16">
@@ -479,7 +479,7 @@
   var k = +prompt("k")
   var result16 = "impossible"
   for (var i = 1; i <= 20; i++) {
-    if (N * i > 200 * (k / 100) ** i) {
+    if ((N * i) >= (200 * (1 + k / 100) ** (i-1))){
       result16 = i
       break;
     }
