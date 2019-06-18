@@ -963,7 +963,7 @@
     for(;intInput>=1;)
     {
       sumNumber+=(intInput%10)**digit
-      intInput = Math.floor(intInputint/10)
+      intInput = Math.floor(Inputint/10)
     }
     if(sumNumber===(+int))
     return 1
@@ -1054,13 +1054,15 @@
     else 
     return 0
   }
-  for(var i = 0;i<1000;i++)
+  for(var i = 2;i<1000;i++)
   {
     isCompleteNumber(i)?console.log(i):"not"
   }
 </script>
 <script id="prime">
   function isPrime(int) {
+    if(int<2)
+    return 0;
     for (var i = 2; i <= Math.sqrt(int); i++) {
       if (int % i === 0)
         return 0;
@@ -1071,13 +1073,15 @@
 </script>
 <script id="primes">
   function isPrime(int) {
+    if(int<2)
+    return 0;
     for (var i = 2; i <= Math.sqrt(int); i++) {
       if (int % i === 0)
         return 0;
     }
     return 1;
   }
-   for(var i = 0;i<100;i++)
+   for(var i = 2;i<100;i++)
   {
     isPrime(i)?console.log(i):"not"
   }
