@@ -950,165 +950,154 @@
   }
 </script>
 <script id="narcissistic">
-  function calDigits(int){
+  function calDigits(int) {
     var countDigit = 0
-    for(;int>=1;countDigit++)
-    int = Math.floor(int/10)
+    for (; int >= 1; countDigit++)
+      int = Math.floor(int / 10)
     return countDigit;
   }
+
   function isNarcissistic(int) {
     var digit = calDigits(int)
     var intInput = +int
-    var sumNumber= 0
-    for(;intInput>=1;)
-    {
-      sumNumber+=(intInput%10)**digit
-      intInput = Math.floor(Inputint/10)
+    var sumNumber = 0
+    for (; intInput >= 1;) {
+      sumNumber += (intInput % 10) ** digit
+      intInput = Math.floor(Inputint / 10)
     }
-    if(sumNumber===(+int))
-    return 1
+    if (sumNumber === (+int))
+      return 1
     else
-    return 0
+      return 0
   }
-  console.log(isNarcissistic(+prompt("n"))?"YES":"NO")
+  console.log(isNarcissistic(+prompt("n")) ? "YES" : "NO")
 </script>
 <script id="narcissistics">
-  function calDigits(int){
+  function calDigits(int) {
     var countDigit = 0
-    for(;int>=1;countDigit++)
-    int = Math.floor(int/10)
+    for (; int >= 1; countDigit++)
+      int = Math.floor(int / 10)
     return countDigit;
   }
+
   function isNarcissistic(int) {
     var digit = calDigits(int)
     var intInput = +int
-    var sumNumber= 0
-    for(;intInput>=1;)
-    {
-      sumNumber+=(intInput%10)**digit
-      intInput = Math.floor(intInput/10)
+    var sumNumber = 0
+    for (; intInput >= 1;) {
+      sumNumber += (intInput % 10) ** digit
+      intInput = Math.floor(intInput / 10)
     }
-    if(sumNumber===(+int))
-    return 1
+    if (sumNumber === (+int))
+      return 1
     else
-    return 0
+      return 0
   }
-  for(var i = 0 ;i<1000;i++)
-  {
-    if(isNarcissistic(i))
-    console.log(i)
+  for (var i = 0; i < 1000; i++) {
+    if (isNarcissistic(i))
+      console.log(i)
   }
 </script>
 <script id="palindrom">
-  function isPalindrom(int){
+  function isPalindrom(int) {
     var intInput = int
     var palindrom = ""
-    for(;intInput>=1;)
-    {
-      palindrom+=(intInput%10)
-      intInput = Math.floor(intInput/10)
+    for (; intInput >= 1;) {
+      palindrom += (intInput % 10)
+      intInput = Math.floor(intInput / 10)
     }
-    if(Number(palindrom) === Number(int))
-    return 1
+    if (Number(palindrom) === Number(int))
+      return 1
     else
-    return 0
+      return 0
   }
-  console.log(isPalindrom(+prompt("n"))?"YES":"NO")
+  console.log(isPalindrom(+prompt("n")) ? "YES" : "NO")
 </script>
 <script id="weekday">
-  console.log(new Date(prompt("year")+"/"+prompt("month")+"/01").getDay())
+  console.log(new Date(prompt("year") + "/" + prompt("month") + "/01").getDay())
 </script>
 <script id="complete-number">
-  function isCompleteNumber(int){
+  function isCompleteNumber(int) {
     var intInput = int
     var sumFactor = 1
-    for(var i =2 ;i< Math.sqrt(intInput);i++)
-    {
-      if(intInput%i === 0)
-      {
-        sumFactor+= i
-        sumFactor+= (intInput/i)
+    for (var i = 2; i < Math.sqrt(intInput); i++) {
+      if (intInput % i === 0) {
+        sumFactor += i
+        sumFactor += (intInput / i)
       }
     }
-    if(sumFactor === (+int))
-    return 1
-    else 
-    return 0
+    if (sumFactor === (+int))
+      return 1
+    else
+      return 0
   }
-  console.log(isCompleteNumber(+prompt("n"))?"YES":"NO")
+  console.log(isCompleteNumber(+prompt("n")) ? "YES" : "NO")
 </script>
 <script id="complete-numbers">
-  function isCompleteNumber(int){
+  function isCompleteNumber(int) {
     var intInput = int
     var sumFactor = 1
-    for(var i =2 ;i< Math.sqrt(intInput);i++)
-    {
-      if(intInput%i === 0)
-      {
-        sumFactor+= i
-        sumFactor+= (intInput/i)
+    for (var i = 2; i < Math.sqrt(intInput); i++) {
+      if (intInput % i === 0) {
+        sumFactor += i
+        sumFactor += (intInput / i)
       }
     }
-    if(sumFactor === (+int))
-    return 1
-    else 
-    return 0
+    if (sumFactor === (+int))
+      return 1
+    else
+      return 0
   }
-  for(var i = 2;i<1000;i++)
-  {
-    isCompleteNumber(i)?console.log(i):"not"
+  for (var i = 2; i < 1000; i++) {
+    isCompleteNumber(i) ? console.log(i) : "not"
   }
 </script>
 <script id="prime">
   function isPrime(int) {
-    if(int<2)
-    return 0;
+    if (+int < 2)
+      return 0;
     for (var i = 2; i <= Math.sqrt(int); i++) {
       if (int % i === 0)
         return 0;
     }
     return 1;
   }
-  console.log(isPrime(+prompt("n"))?"YES":"NO")
+  console.log(isPrime(+prompt("n")) ? "YES" : "NO")
 </script>
 <script id="primes">
   function isPrime(int) {
-    if(int<2)
-    return 0;
+    if (+int < 2)
+      return 0;
     for (var i = 2; i <= Math.sqrt(int); i++) {
       if (int % i === 0)
         return 0;
     }
     return 1;
   }
-   for(var i = 2;i<100;i++)
-  {
-    isPrime(i)?console.log(i):"not"
+  for (var i = 2; i < 100; i++) {
+    isPrime(i) ? console.log(i) : "not"
   }
 </script>
 <script id="itob">
   console.log(String(+prompt("n")))
 </script>
 <script id="lcf&lcm">
-  var Numberlcf =+prompt("number1")
-  var Numberlcm =+prompt("number2")
-  var bigger = Numberlcf<Numberlcm?Numberlcm:Numberlcf
-  var smaller = Numberlcf<Numberlcm?Numberlcf:Numberlcm
-  for(var i = smaller;i>= 2;i--){
-    if(smaller%i === 0)
-    {
-      if(bigger%i === 0)
-      {
+  var Numberlcf = +prompt("number1")
+  var Numberlcm = +prompt("number2")
+  var bigger = Numberlcf < Numberlcm ? Numberlcm : Numberlcf
+  var smaller = Numberlcf < Numberlcm ? Numberlcf : Numberlcm
+  for (var i = 1;; i++) {
+    if ((bigger * i) % (smaller) === 0) {
+      console.log(i * bigger)
+      break;
+    }
+  }
+  for (var i = smaller; i >= 2; i--) {
+    if (smaller % i === 0) {
+      if (bigger % i === 0) {
         console.log(i)
         break;
       }
-    }
-  }
-  for(var i = 1;;i++){
-    if((bigger*i)%(smaller)=== 0)
-    {
-      console.log(i*bigger)
-        break;
     }
   }
 </script>
