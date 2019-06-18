@@ -679,8 +679,8 @@
       list.push(i)
   }
   var result31 = ""
-  for (var i = 1; i < list.length; i++) {
-    if (i !== 1)
+  for (var i = 0; i < list.length; i++) {
+    if (i !== 0)
       result31 += ","
     result31 += list[i]
   }
@@ -757,7 +757,9 @@
 var Number38 = +prompt("n")
 for (var i = 0; i < Number38; i++) {
   var count38 =+prompt("最高次幂")
-  for(var x = count38 ;x >=0;x--)
+  if(count38 ===0)
+  console.log(0)
+  for(var x = count38 ;x >0;x--)
   {
     console.log(count38*prompt("c"+count38))
   }
@@ -781,7 +783,7 @@ return 0
 }
 
 for (var i = 1; i <= Number39; i++) {
-  if(i%7 !== 0||!HasSenven(i)){
+  if(i%7 !== 0&&!HasSenven(i)){
     sum39+= i**2
   }
 }
