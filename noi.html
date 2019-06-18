@@ -1088,10 +1088,12 @@
 <script id="lcf&lcm">
   var Numberlcf =+prompt("number1")
   var Numberlcm =+prompt("number2")
-  for(var i = 2;i<=(Numberlcf<Numberlcm?Numberlcf:Numberlcm);i++){
-    if(Numberlcf%i === 0)
+  var bigger = Numberlcf<Numberlcm?Numberlcm:Numberlcf
+  var smaller = Numberlcf<Numberlcm?Numberlcf:Numberlcm
+  for(var i = smaller;i>= 2;i--){
+    if(smaller%i === 0)
     {
-      if(Numberlcm%i === 0)
+      if(bigger%i === 0)
       {
         console.log(i)
         break;
@@ -1099,9 +1101,7 @@
     }
   }
   for(var i = 1;;i++){
-    var bigger = Numberlcf<Numberlcm?Numberlcm:Numberlcf
-    var smaller = Numberlcf<Numberlcm?Numberlcf:Numberlcm
-    if((bigger*i)%(Numberlcf)=== 0)
+    if((bigger*i)%(smaller)=== 0)
     {
       console.log(i*bigger)
         break;
