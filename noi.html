@@ -757,17 +757,18 @@
 var Number38 = +prompt("n")
 for (var i = 0; i < Number38; i++) {
   var count38 =+prompt("最高次幂")
-  if(count38 ===0)
+  if(count38 === 0)
   {
-    prompt("c"+count38)
     console.log(0)
-  }
-  for(var x = count38 ;x >=0;x--)
-  {
-    if(x=== 0)
-    ;
-    else
-    console.log(count38*prompt("c"+count38))
+  }else{
+    for(var x = count38 ;x >=0;x--)
+    {
+      var data = +prompt("c"+x)
+      if(x!==0)
+      {
+        console.log(count38*data)
+      }
+    }
   }
 }
 </script>
