@@ -746,56 +746,52 @@
   var M = +prompt("M")
   var N = +prompt("N")
   var X = +prompt("X")
-  while(N*X>=M){
-    X-=Math.ceil(M/N)
-    N+=Math.floor(M/N)
+  while (N * X >= M) {
+    X -= Math.ceil(M / N)
+    N += Math.floor(M / N)
   }
   console.log(N)
 </script>
 
 <script id="ch0105/38">
-var Number38 = +prompt("n")
-for (var i = 0; i < Number38; i++) {
-  var count38 =+prompt("最高次幂")
-  if(count38 === 0)
-  {
-    var c0 = +prompt("c"+x)
-    console.log(0)
-  }else{
-    for(var x = count38 ;x >=0;x--)
-    {
-      var data = +prompt("c"+x)
-      if(x!==0)
-      {
-        console.log(data*x)
+  var Number38 = +prompt("n")
+  for (var i = 0; i < Number38; i++) {
+    var count38 = +prompt("最高次幂")
+    if (count38 === 0) {
+      var c0 = +prompt("c" + x)
+      console.log(0)
+    } else {
+      for (var x = count38; x >= 0; x--) {
+        var data = +prompt("c" + x)
+        if (x !== 0) {
+          console.log(data * x)
+        }
       }
     }
   }
-}
 </script>
 
 <script id="ch0105/39">
-var Number39 = +prompt("n")
-var sum39 = 0
+  var Number39 = +prompt("n")
+  var sum39 = 0
 
-function HasSenven(int){
-while(int>=1){
-  if(int%10 === 7)
-  {
-    return 1
-  }else{
-    int = Math.floor(int/10)
+  function HasSenven(int) {
+    while (int >= 1) {
+      if (int % 10 === 7) {
+        return 1
+      } else {
+        int = Math.floor(int / 10)
+      }
+    }
+    return 0
   }
-}
-return 0
-}
 
-for (var i = 1; i <= Number39; i++) {
-  if(i%7 !== 0&&!HasSenven(i)){
-    sum39+= i**2
+  for (var i = 1; i <= Number39; i++) {
+    if (i % 7 !== 0 && !HasSenven(i)) {
+      sum39 += i ** 2
+    }
   }
-}
-console.log(sum39)
+  console.log(sum39)
 </script>
 
 <script id="ch0105/40">
@@ -911,4 +907,207 @@ console.log(sum39)
   }
   var extra = (date + 1) * date / 2 - Number45
   console.log(+coin + (extra * date))
+</script>
+
+<script id="7">
+  function HasSenven(int) {
+    while (int >= 1) {
+      if (int % 10 === 7) {
+        return 1
+      } else {
+        int = Math.floor(int / 10)
+      }
+    }
+  }
+
+  var Number_7 = +prompt("n")
+  if (Number_7 % 7 === 0 || HasSenven(Number_7))
+    console.log("YES")
+  else
+    console.log("NO")
+</script>
+<script id="sort">
+  var sortlist = new Array()
+  for (var i = 0; i < 3; i++) {
+    var numm = +prompt("n");
+    if (sortlist.length === 0)
+      sortlist[0] = numm
+    else {
+      if (numm >= sortlist[sortlist.length - 1]) {
+        sortlist.push(numm)
+      } else {
+        var length = sortlist.length
+        for (var x = 0; x < length; x++) {
+          if (numm < sortlist[x]) {
+            sortlist.splice(x, 0, numm)
+          }
+        }
+      }
+    }
+  }
+  for (var i = 0; i < sortlist.length; i++) {
+    console.log(sortlist[i])
+  }
+</script>
+<script id="narcissistic">
+  function calDigits(int){
+    var countDigit = 0
+    for(;int>=1;countDigit++)
+    int = Math.floor(int/10)
+    return countDigit;
+  }
+  function isNarcissistic(int) {
+    var digit = calDigits(int)
+    var intInput = +int
+    var sumNumber= 0
+    for(;intInput>=1;)
+    {
+      sumNumber+=(intInput%10)**digit
+      intInput = Math.floor(intInputint/10)
+    }
+    if(sumNumber===(+int))
+    return 1
+    else
+    return 0
+  }
+  console.log(isNarcissistic(+prompt("n"))?"YES":"NO")
+</script>
+<script id="narcissistics">
+  function calDigits(int){
+    var countDigit = 0
+    for(;int>=1;countDigit++)
+    int = Math.floor(int/10)
+    return countDigit;
+  }
+  function isNarcissistic(int) {
+    var digit = calDigits(int)
+    var intInput = +int
+    var sumNumber= 0
+    for(;intInput>=1;)
+    {
+      sumNumber+=(intInput%10)**digit
+      intInput = Math.floor(intInput/10)
+    }
+    if(sumNumber===(+int))
+    return 1
+    else
+    return 0
+  }
+  for(var i = 0 ;i<1000;i++)
+  {
+    if(isNarcissistic(i))
+    console.log(i)
+  }
+</script>
+<script id="palindrom">
+  function isPalindrom(int){
+    var intInput = int
+    var palindrom = ""
+    for(;intInput>=1;)
+    {
+      palindrom+=(intInput%10)
+      intInput = Math.floor(intInput/10)
+    }
+    if(Number(palindrom) === Number(int))
+    return 1
+    else
+    return 0
+  }
+  console.log(isPalindrom(+prompt("n"))?"YES":"NO")
+</script>
+<script id="weekday">
+  console.log(new Date(prompt("year")+"/"+prompt("month")+"/01").getDay())
+</script>
+<script id="complete-number">
+  function isCompleteNumber(int){
+    var intInput = int
+    var sumFactor = 1
+    for(var i =2 ;i< Math.sqrt(intInput);i++)
+    {
+      if(intInput%i === 0)
+      {
+        sumFactor+= i
+        sumFactor+= (intInput/i)
+      }
+    }
+    if(sumFactor === (+int))
+    return 1
+    else 
+    return 0
+  }
+  console.log(isCompleteNumber(+prompt("n"))?"YES":"NO")
+</script>
+<script id="complete-numbers">
+  function isCompleteNumber(int){
+    var intInput = int
+    var sumFactor = 1
+    for(var i =2 ;i< Math.sqrt(intInput);i++)
+    {
+      if(intInput%i === 0)
+      {
+        sumFactor+= i
+        sumFactor+= (intInput/i)
+      }
+    }
+    if(sumFactor === (+int))
+    return 1
+    else 
+    return 0
+  }
+  for(var i = 0;i<1000;i++)
+  {
+    isCompleteNumber(i)?console.log(i):"not"
+  }
+</script>
+<script id="prime">
+  function isPrime(int) {
+    for (var i = 2; i <= Math.sqrt(int); i++) {
+      if (int % i === 0)
+        return 0;
+    }
+    return 1;
+  }
+  console.log(isPrime(+prompt("n"))?"YES":"NO")
+</script>
+<script id="primes">
+  function isPrime(int) {
+    for (var i = 2; i <= Math.sqrt(int); i++) {
+      if (int % i === 0)
+        return 0;
+    }
+    return 1;
+  }
+   for(var i = 0;i<100;i++)
+  {
+    isPrime(i)?console.log(i):"not"
+  }
+</script>
+<script id="itob">
+  console.log(String(+prompt("n")))
+</script>
+<script id="lcf&lcm">
+  var Numberlcf =+prompt("number1")
+  var Numberlcm =+prompt("number2")
+  for(var i = 2;i<=(Numberlcf<Numberlcm?Numberlcf:Numberlcm);i++){
+    if(Numberlcf%i === 0)
+    {
+      if(Numberlcm%i === 0)
+      {
+        console.log(i)
+        break;
+      }
+    }
+  }
+  for(var i = 1;;i++){
+    var bigger = Numberlcf<Numberlcm?Numberlcm:Numberlcf
+    var smaller = Numberlcf<Numberlcm?Numberlcf:Numberlcm
+    if((bigger*i)%(Numberlcf)=== 0)
+    {
+      console.log(i*bigger)
+        break;
+    }
+  }
+</script>
+<script id="sqrt">
+  console.log(Math.sqrt(+prompt("n")).toFixed(3))
 </script>
