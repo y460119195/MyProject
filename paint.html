@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas width="400" height="300"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated'
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color) {
+    ctx.fillStyle = (!!color?color:"black")
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * YOUR TASK
+画图的题：
+画一条实线
+画一条一个实点一个空点的虚线
+画一条两个实点两个空点的虚线
+画一条三个实点两个空点的虚线
+画一条45度的斜线
+画一条跨越画布左上角和右下角的对角线
+画一个空心矩形
+画一个实心矩形
+画一个rgb色彩空间的某一面
+画一个空心的圆
+画一个实心的圆
+画一个大小合适的sin(x)的图像
+   */
+</script>
+<script>
+  // YOUR CODE GOES BELOW
+  function drawLine(style, line ,color) {
+    var lineStyle = new Array()
+    for (var char in style) {
+      lineStyle.push(style[char])
+    }
+    for (var i = 5; i < 396;) {
+      var deff = 395 - i
+      for (var x = 0; x < (lineStyle.length < deff ? lineStyle.length : deff); x++) {
+        if (+lineStyle[x])
+        {
+          if(!!color)
+          {
+            dot(i + x, line,color)
+            continue
+          }
+          dot(i + x, line)
+        }
+          
+      }
+      i += lineStyle.length
+    }
+  }
+
+  function drawAllLine(style, startPoint, endPoint,color) {
+    var lineStyle = new Array()
+    for (var char in style) {
+      lineStyle.push(style[char])
+    }
+    var startPointX = Number(String(startPoint).split("(")[1].split(")")[0].split(",")[0])
+    var startPointY = Number(String(startPoint).split("(")[1].split(")")[0].split(",")[1])
+    var endPointX = Number(String(endPoint).split("(")[1].split(")")[0].split(",")[0])
+    var endPointY = Number(String(endPoint).split("(")[1].split(")")[0].split(",")[1])
+    
+    if (endPointY === startPointY) {
+      for (var i = startPointX; i < (endPointX+1);) {
+        var deff = 395 - i
+        for (var x = 0; x < (lineStyle.length < deff ? lineStyle.length : deff); x++) {
+          if (+lineStyle[x])
+          if(!!color)
+          {
+            dot(i + x, endPointY,color)
+            continue
+          }
+            dot(i + x, endPointY)
+        }
+        i += lineStyle.length
+      }
+    } else if (endPointX === startPointX) {
+      for (var i = startPointY ; i < (endPointY+1);) {
+        var deff = endPointY - i
+        for (var x = 0; x < (lineStyle.length < deff ? lineStyle.length : deff); x++) {
+          if (+lineStyle[x])
+          if(!!color)
+          {
+            dot(endPointX, i + x,color)
+            continue
+          }
+            dot(endPointX, i + x)
+        }
+        i += lineStyle.length
+      }
+    } else {
+      var slope = (endPointY - startPointY) / (endPointX - startPointX)
+      for (var i = startPointX ; i < (endPointX+1);) {
+        var deff = endPointX - i
+        for (var x = 0; x < (lineStyle.length < deff ? lineStyle.length : deff); x++) {
+          if (+lineStyle[x])
+          if(!!color)
+          {
+            dot(i+x, slope*(i + x),color)
+            continue
+          }
+            dot(i+x, slope*(i + x))
+        }
+        i += lineStyle.length
+      }
+    }
+
+  }
+
+  function drawFullSquare(startPoint,height,width){
+    var startPointX = Number(String(startPoint).split("(")[1].split(")")[0].split(",")[0])
+    var startPointY = Number(String(startPoint).split("(")[1].split(")")[0].split(",")[1])
+    for(var i = 0 ;i<height;i++)
+    {
+      var y = i+startPointY
+      drawAllLine("1", "("+startPointX+","+y+")", "("+(startPointX+width)+","+y+")")
+    }
+  }
+
+  function drawCircle(point,r){
+    var pointX = Number(String(point).split("(")[1].split(")")[0].split(",")[0])
+    var pointY = Number(String(point).split("(")[1].split(")")[0].split(",")[1])
+    
+    for(var i= 0;i < 360;i++)
+    {
+      var x = pointX + r * Math.cos(i * Math.PI / 180)
+      var y = pointY + r * Math.sin(i * Math.PI /180)
+      dot(x,y)
+    }
+  }
+  function drawFullCircle(point,r){
+    for(var i =1;i<=r;i++)
+    {
+      drawCircle(point,i)
+    }
+  }
+
+  function drawSin(startPointX,endPointX,startY,magnification){
+
+    for (var i = startPointX; i < endPointX;i++) {
+      y =magnification*Math.sin(1/magnification*i)
+      dot(i,y+startY)
+    }
+  }
+  function drawRGB(startPoint,magnification){
+    var startPointX = Number(String(startPoint).split("(")[1].split(")")[0].split(",")[0])
+    var startPointY = Number(String(startPoint).split("(")[1].split(")")[0].split(",")[1])
+    for(var x= 0 ;x<255;x++)
+    {
+      for(var i =0 ;i<255;i++)
+    {
+      dot(startPointX+i*magnification,startPointY+x*magnification,"rgb(0,"+i+","+x+")")
+    }
+
+    }
+    
+  }
+  function drawFullRGB(startPoint,startColor,endColor){
+    var startPointX = Number(String(startPoint).split("(")[1].split(")")[0].split(",")[0])
+    var startPointY = Number(String(startPoint).split("(")[1].split(")")[0].split(",")[1])
+    var startColorR = Number(String(startColor).split("(")[1].split(")")[0].split(",")[0])
+    var startColorG = Number(String(startColor).split("(")[1].split(")")[0].split(",")[1])
+    var startColorB = Number(String(startColor).split("(")[1].split(")")[0].split(",")[2])
+    var endColorR = Number(String(startColor).split("(")[1].split(")")[0].split(",")[0])
+    var endColorG = Number(String(startColor).split("(")[1].split(")")[0].split(",")[1])
+    var endColorB = Number(String(startColor).split("(")[1].split(")")[0].split(",")[2])
+    
+    startColorR-endColorR
+    for(var i =0 ;i<255;i++)
+    {
+      dot(startPointX,startPointX,)
+    }
+  }
+</script>
+<script>
+  drawLine("101", 5)//(线条样式 1为实 0为空 , 在第几行 即y)
+  drawLine("10", 10)
+  drawLine("1100", 15)
+  drawLine("11100", 20)
+  drawAllLine("1", "(0,0)", "(300,300)")//(线条样式 1为实 0为空 , 起点坐标,终点坐标)
+  drawAllLine("1", "(0,0)", "(400,300)")
+ 
+  //square
+  drawAllLine("1", "(30,30)", "(80,30)")
+  drawAllLine("1", "(30,30)", "(30,50)")
+  drawAllLine("1", "(80,30)", "(80,50)")
+  drawAllLine("1", "(30,50)", "(80,50)")
+  drawFullSquare("(100,100)",50,100)//(起点坐标, 高,宽)
+
+  drawCircle("(50,100)",20) //(圆心,半径)
+  drawFullCircle("(50,150)",20)//(圆心,半径)
+
+  drawSin(50,350,250,5)//(x轴开始坐标,x轴结束坐标,y轴坐标,大小)
+
+  drawAllLine("1", "(50,280)", "(350,280)","rgb(0,255,0)")//最后一项颜色可不填,默认为black
+  drawRGB("(250,40)",0.5) //(开始坐标,大小)
+</script>
+
+</html>
