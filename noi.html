@@ -746,7 +746,7 @@
   var M = +prompt("M")
   var N = +prompt("N")
   var X = +prompt("X")
-  while (N * X >= M) {
+  for (;N * X >= M;) {
     X -= Math.ceil(M / N)
     N += Math.floor(M / N)
   }
