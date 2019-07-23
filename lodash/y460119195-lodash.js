@@ -5,7 +5,7 @@ var y460119195 = {
   chunk: function(ary,size = 1) {
     var result = []
     for(var i in ary){
-      var subscript = Math.floor((i+1)/size)-1
+      var subscript = Math.floor((i)/size)
       if(!result[subscript])
       result[subscript] = []
       result[subscript].push(ary[i])
@@ -13,6 +13,16 @@ var y460119195 = {
     return result
   },
   concat:function(ary,...other){
-
+    for(var i in other){
+      if(Array.isArray(other[i])){
+        for(var j in other[i])
+          ary.push(other[i][j])
+      }else
+        ary.push(other[i])
+    }
+    return ary
+  },
+  difference:function(array,values){
+    
   },
 }
