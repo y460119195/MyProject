@@ -22,12 +22,15 @@ var y460119195 = {
     }
     return ary
   },
-  difference:function(array,values){
+  difference:function(array,...values){
     var map = {}
     var result = []
-    values.forEach(element => {
-      map[element] = 1
-    });
+    for(var i in values){
+      if(Array.isArray(values[i])){
+        for(var j in values[i])
+          map[values[i][j]] = 1
+      }
+    }
     array.forEach(function(element) {
       if(!(element in map))
       result.push(element)
