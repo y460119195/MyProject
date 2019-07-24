@@ -23,6 +23,39 @@ var y460119195 = {
     return ary
   },
   difference:function(array,values){
+    var map = {}
+    var result = []
+    values.forEach(element => {
+      map[element] = 1
+    });
+    array.forEach(function(element) {
+      if(!(element in map))
+      result.push(element)
+    })
+    return result
+  },
+  differenceBy:function(){
+    
+  },
+  differenceWith:function(){
+    
+  },
+  drop:function(ary,n = 1){
+    for(var i = 0; i<n;i++){
+      ary.shift()
+    }
+    return ary
+  },
+  dropRight:function(ary,n = 1){
+    for(var i = 0; i<n;i++){
+      ary.pop()
+    }
+    return ary
+  },
+  dropRightWhile:function(ary,n = 1){
+    
+  },
+  dropWhile:function(ary,n = 1){
     
   },
 }
