@@ -159,7 +159,7 @@ class lodash {
   flattenDepth(array,depth = 1){
     var newArray = array
     while(depth){
-      newArray = flatten(newArray)
+      newArray = this.flatten(newArray)
       depth--
     }
     return newArray
