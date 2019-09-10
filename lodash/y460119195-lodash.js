@@ -155,7 +155,7 @@ var y460119195 = {
     var newArray = []
     for(let it of array){
       if(Array.isArray(it)){
-        var tmp = flattenDeep(it)
+        var tmp = this.flattenDeep(it)
         newArray.concat(tmp)
       }else
         newArray.push(it)
