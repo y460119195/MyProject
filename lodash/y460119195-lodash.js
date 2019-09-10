@@ -98,10 +98,42 @@ var y460119195 = {
     }
     return -1
   },
-  findLastIndex:function(array, [predicate=_.identity], [fromIndex=0]){
-    
+  findLastIndex:function(array,pre,fromIndex = array.length-1){
+
+    if(Array.isArray(pre)){
+      for(let i = fromIndex;i>=0;i--){
+        if(array[i][pre[0]] == pre[1])
+          return i
+      }
+    }else if(typeof(pre) === 'object'){
+      for(let i = fromIndex;i>=0;i--){
+        for(let j in pre){
+          if(!array[i][j])
+            break;
+          if(array[i][j] != pre[j])
+            break
+          if(j == (pre.length-1))
+            return i
+        }
+      }
+    }else if(typeof(pre) === 'function'){
+      for(let i = fromIndex;i>=0;i--){
+        if(pre(array[i]))
+          return i
+      }
+    }else if(typeof(pre) === 'string'){
+      for(let i = fromIndex;i>=0;i--){
+        if(array[i][pre])
+          return i
+      }
+    }
+    return -1
   },
-  flatten:function(array, [predicate=_.identity], [fromIndex=0]){
-    
+  flatten:function(array){
+    var newArray = []
+    for(var it of array){
+      newArray.push(it)
+    }
+    return newArray
   },
 }
