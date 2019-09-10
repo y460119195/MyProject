@@ -81,8 +81,9 @@ var y460119195 = {
             break;
           if(array[i][j] != pre[j])
             break
+          if(j == (pre.length-1))
+            return i
         }
-          return i
       }
     }else if(typeof(pre) === 'function'){
       for(let i = fromIndex;i< length;i++){
