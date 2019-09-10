@@ -155,16 +155,10 @@ var y460119195 = {
     return array.toString().split(',').map(it=>Number(it))
   },
   flattenDepth:function(array,depth = 1){
-    if(depth == 0){
-      return array
-    }
-    var newArray = []
-    for(let it of array){
-      if(Array.isArray(it)){
-        var tmp = this.flattenDeep(it,depth-1)
-        newArray.concat(tmp)
-      }else
-        newArray.push(it)
+    var newArray = array
+    while(depth){
+      newArray = flatten(newArray)
+      depth--
     }
     return newArray
   },
