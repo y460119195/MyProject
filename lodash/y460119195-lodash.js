@@ -1,6 +1,5 @@
 class lodash {
   constructor(){
-    this.id = zyb
   }
   compact(ary) {
     return ary.filter(it => it)
