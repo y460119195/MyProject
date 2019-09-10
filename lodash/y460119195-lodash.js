@@ -61,4 +61,45 @@ var y460119195 = {
   dropWhile:function(ary,n = 1){
     
   },
+  fill:function(array, value, start = 0, end=array.length){
+    for(var i = start ;i < end;i++){
+      array[i] = value
+    }
+    return array
+  },
+  findIndex:function(array,pre){
+    if(Array.isArray(pre)){
+      for(var i in array){
+        if(array[i][pre[0]] == pre[1])
+          return i
+      }
+    }else if(typeof(pre) === 'object'){
+      for(var i in array){
+        for(var j in pre){
+          if(!array[i][j])
+            break;
+          if(array[i][j] != pre[j])
+            break
+        }
+          return i
+      }
+    }else if(typeof(pre) === 'function'){
+      for(var i in array){
+        if(pre(array[i]))
+          return i
+      }
+    }else if(typeof(pre) === 'string'){
+      for(var i in array){
+        if(array[i][pre])
+          return i
+      }
+    }
+    return -1
+  },
+  findLastIndex:function(array, [predicate=_.identity], [fromIndex=0]){
+    
+  },
+  flatten:function(array, [predicate=_.identity], [fromIndex=0]){
+    
+  },
 }
