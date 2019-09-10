@@ -76,7 +76,7 @@ var y460119195 = {
       }
     }else if(typeof(pre) === 'object'){
       for(let i = fromIndex;i< length;i++){
-        var flag = true
+        let flag = true
         for(let j in pre){
           if(!array[i][j]){
             flag = false
@@ -142,20 +142,28 @@ var y460119195 = {
   flatten:function(array){
     var newArray = []
     for(var it of array){
-      newArray.push(it)
+      if(Array.isArray(it)){
+        for(var j of it){
+          newArray.push(j)
+        }
+      }else{
+        newArray.push(it)
+      }
     }
     return newArray
   },
-  flattenDeep:function(){
+  flattenDeep:function(array){
     var newArray = []
     for(let it of array){
-      if(Array.isArray(it))
-        it = flattenDeep(it)
-      newArray.push(it)
+      if(Array.isArray(it)){
+        var tmp = flattenDeep(it)
+        newArray.concat(tmp)
+      }else
+        newArray.push(it)
     }
     return newArray
   },
-  flattenDepth:function(){
+  flattenDepth:function(a,depth = 1){
 
   },
   fromPairs:function(){
