@@ -76,14 +76,19 @@ var y460119195 = {
       }
     }else if(typeof(pre) === 'object'){
       for(let i = fromIndex;i< length;i++){
+        var flag = true
         for(let j in pre){
-          if(!array[i][j])
-            break;
-          if(array[i][j] != pre[j])
+          if(!array[i][j]){
+            flag = false
             break
-          if(j == (pre.length-1))
-            return i
+          }
+          if(array[i][j] != pre[j]){
+            flag = false
+            break
+          }
         }
+        if(flag)
+        return i
       }
     }else if(typeof(pre) === 'function'){
       for(let i = fromIndex;i< length;i++){
@@ -106,15 +111,20 @@ var y460119195 = {
           return i
       }
     }else if(typeof(pre) === 'object'){
-      for(let i = fromIndex;i>=0;i--){
+      for(let i = fromIndex;i< length;i++){
+        var flag = true
         for(let j in pre){
-          if(!array[i][j])
-            break;
-          if(array[i][j] != pre[j])
+          if(!array[i][j]){
+            flag = false
             break
-          if(j == (pre.length-1))
-            return i
+          }
+          if(array[i][j] != pre[j]){
+            flag = false
+            break
+          }
         }
+        if(flag)
+        return i
       }
     }else if(typeof(pre) === 'function'){
       for(let i = fromIndex;i>=0;i--){
@@ -136,4 +146,26 @@ var y460119195 = {
     }
     return newArray
   },
+  flattenDeep:function(){
+
+  },
+  flattenDepth:function(){
+
+  },
+  fromPairs:function(){
+
+  },
+  head:function(){
+
+  },
+  indexOf:function(){
+
+  },
+  initial:function(){
+
+  },
+  intersection:function(){
+
+  },
+
 }
