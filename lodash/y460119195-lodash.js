@@ -80,11 +80,9 @@ var y460119195 = {
         for(let j in pre){
           if(!array[i][j]){
             flag = false
-            break
           }
           if(array[i][j] != pre[j]){
             flag = false
-            break
           }
         }
         if(flag)
@@ -116,11 +114,9 @@ var y460119195 = {
         for(let j in pre){
           if(!array[i][j]){
             flag = false
-            break
           }
           if(array[i][j] != pre[j]){
             flag = false
-            break
           }
         }
         if(flag)
