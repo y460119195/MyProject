@@ -67,15 +67,16 @@ var y460119195 = {
     }
     return array
   },
-  findIndex:function(array,pre){
+  findIndex:function(array,pre,fromIndex = 0){
+    var length = array.length
     if(Array.isArray(pre)){
-      for(var i in array){
+      for(let i = fromIndex;i< length;i++){
         if(array[i][pre[0]] == pre[1])
           return i
       }
     }else if(typeof(pre) === 'object'){
-      for(var i in array){
-        for(var j in pre){
+      for(let i = fromIndex;i< length;i++){
+        for(let j in pre){
           if(!array[i][j])
             break;
           if(array[i][j] != pre[j])
@@ -84,12 +85,12 @@ var y460119195 = {
           return i
       }
     }else if(typeof(pre) === 'function'){
-      for(var i in array){
+      for(let i = fromIndex;i< length;i++){
         if(pre(array[i]))
           return i
       }
     }else if(typeof(pre) === 'string'){
-      for(var i in array){
+      for(let i = fromIndex;i< length;i++){
         if(array[i][pre])
           return i
       }
