@@ -76,13 +76,15 @@ var y460119195 = {
       }
     }else if(typeof(pre) === 'object'){
       for(let i = fromIndex;i< length;i++){
-        let flag = true
+        var flag = true
         for(let j in pre){
-          if(!array[i][j]){
+          if(array[i][j] == undefined){
             flag = false
+            break
           }
           if(array[i][j] != pre[j]){
             flag = false
+            break
           }
         }
         if(flag)
@@ -112,11 +114,13 @@ var y460119195 = {
       for(let i = fromIndex;i< length;i++){
         var flag = true
         for(let j in pre){
-          if(!array[i][j]){
+          if(array[i][j] == undefined){
             flag = false
+            break
           }
           if(array[i][j] != pre[j]){
             flag = false
+            break
           }
         }
         if(flag)
