@@ -1,8 +1,11 @@
-var y460119195 = {
-  compact: function(ary) {
+class y460119195 {
+  constructor(){
+    this.id = zyb
+  }
+  compact(ary) {
     return ary.filter(it => it)
-  },
-  chunk: function(ary,size = 1) {
+  }
+  chunk(ary,size = 1) {
     var result = []
     for(var i in ary){
       var subscript = Math.floor((i)/size)
@@ -11,8 +14,8 @@ var y460119195 = {
       result[subscript].push(ary[i])
     }
     return result
-  },
-  concat:function(ary,...other){
+  }
+  concat(ary,...other){
     for(var i in other){
       if(Array.isArray(other[i])){
         for(var j in other[i])
@@ -21,8 +24,8 @@ var y460119195 = {
         ary.push(other[i])
     }
     return ary
-  },
-  difference:function(array,...values){
+  }
+  difference(array,...values){
     var map = {}
     var result = []
     for(var i in values){
@@ -36,38 +39,38 @@ var y460119195 = {
       result.push(element)
     })
     return result
-  },
-  differenceBy:function(){
+  }
+  differenceBy(){
     
-  },
-  differenceWith:function(){
+  }
+  differenceWith(){
     
-  },
-  drop:function(ary,n = 1){
+  }
+  drop(ary,n=1){
     for(var i = 0; i<n;i++){
       ary.shift()
     }
     return ary
-  },
-  dropRight:function(ary,n = 1){
+  }
+  dropRight(ary,n = 1){
     for(var i = 0; i<n;i++){
       ary.pop()
     }
     return ary
-  },
-  dropRightWhile:function(ary,n = 1){
+  }
+  dropRightWhile(ary,n = 1){
     
-  },
-  dropWhile:function(ary,n = 1){
+  }
+  dropWhile(ary,n = 1){
     
-  },
-  fill:function(array, value, start = 0, end=array.length){
+  }
+  fill(array, value, start = 0, end=array.length){
     for(var i = start ;i < end;i++){
       array[i] = value
     }
     return array
-  },
-  findIndex:function(array,pre,fromIndex = 0){
+  }
+  findIndex(array,pre,fromIndex = 0){
     var length = array.length
     if(Array.isArray(pre)){
       for(let i = fromIndex;i< length;i++){
@@ -101,8 +104,8 @@ var y460119195 = {
       }
     }
     return -1
-  },
-  findLastIndex:function(array,pre,fromIndex = array.length-1){
+  }
+  findLastIndex(array,pre,fromIndex = array.length-1){
 
     if(Array.isArray(pre)){
       for(let i = fromIndex;i>=0;i--){
@@ -137,8 +140,8 @@ var y460119195 = {
       }
     }
     return -1
-  },
-  flatten:function(array){
+  }
+  flatten(array){
     var newArray = []
     for(var it of array){
       if(Array.isArray(it)){
@@ -150,32 +153,32 @@ var y460119195 = {
       }
     }
     return newArray
-  },
-  flattenDeep:function(array){
+  }
+  flattenDeep(array){
     return array.toString().split(',').map(it=>Number(it))
-  },
-  flattenDepth:function(array,depth = 1){
+  }
+  flattenDepth(array,depth = 1){
     var newArray = array
     while(depth){
       newArray = flatten(newArray)
       depth--
     }
     return newArray
-  },
-  fromPairs:function(){
+  }
+  fromPairs(){
 
-  },
-  head:function(){
+  }
+  head(){
 
-  },
-  indexOf:function(){
+  }
+  indexOf(){
 
-  },
-  initial:function(){
+  }
+  initial(){
 
-  },
-  intersection:function(){
+  }
+  intersection(){
 
-  },
+  }
 
 }
