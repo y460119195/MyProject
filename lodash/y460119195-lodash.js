@@ -152,18 +152,21 @@ var y460119195 = {
     return newArray
   },
   flattenDeep:function(array){
+    return array.toString().split(',').map(it=>Number(it))
+  },
+  flattenDepth:function(array,depth = 1){
+    if(depth == 0){
+      return array
+    }
     var newArray = []
     for(let it of array){
       if(Array.isArray(it)){
-        var tmp = this.flattenDeep(it)
+        var tmp = this.flattenDeep(it,depth-1)
         newArray.concat(tmp)
       }else
         newArray.push(it)
     }
     return newArray
-  },
-  flattenDepth:function(a,depth = 1){
-
   },
   fromPairs:function(){
 
