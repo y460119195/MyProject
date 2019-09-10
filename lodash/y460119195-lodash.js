@@ -87,8 +87,7 @@ var y460119195 = {
             break
           }
         }
-        if(flag)
-        return i
+        if(flag)return i
       }
     }else if(typeof(pre) === 'function'){
       for(let i = fromIndex;i< length;i++){
@@ -111,7 +110,7 @@ var y460119195 = {
           return i
       }
     }else if(typeof(pre) === 'object'){
-      for(let i = fromIndex;i< length;i++){
+      for(let i = fromIndex;i>=0;i--){
         var flag = true
         for(let j in pre){
           if(array[i][j] == undefined){
