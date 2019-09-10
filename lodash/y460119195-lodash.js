@@ -147,7 +147,13 @@ var y460119195 = {
     return newArray
   },
   flattenDeep:function(){
-
+    var newArray = []
+    for(let it of array){
+      if(Array.isArray(it))
+        it = flattenDeep(it)
+      newArray.push(it)
+    }
+    return newArray
   },
   flattenDepth:function(){
 
