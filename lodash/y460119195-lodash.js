@@ -1,4 +1,4 @@
-class y460119195 {
+class lodash {
   constructor(){
     this.id = zyb
   }
@@ -183,4 +183,4 @@ class y460119195 {
 
 }
 
-var y460119195 = new y460119195()
+var y460119195 = new lodash()
