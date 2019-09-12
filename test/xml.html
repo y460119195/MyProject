@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+var createMyElement = function(type, attr, content) {
+      var el = document.createElement(type)
+      attr = Object(attr)
+      if (attr) {
+        for (let key in attr) {
+          el.setAttribute(key, attr[key])
+        }
+      }
+      if (content) {
+        var t = document.createTextNode(content)
+        el.appendChild(t);
+      }
+      return el
+    }
+
+  var xmlHttpRequest = function(type,url,callback,asyn = true){
+    var xhr = new XMLHttpRequest()
+    xhr.open(type,url,asyn)
+    xhr.send()
+    xhr.addEventListener('load',()=>{
+      if(callback)
+      callback(xhr.responseText)
+    })
+  }
+
+  var setImg = function(xml,number){
+    var imgs = JSON.parse(xml)
+    if(number){
+      var img = imgs[number-1]
+      img.src = 'https://xieranmaya.github.io/images/cats/'+img.url
+      img.url = ''
+      img.height = img.height/2+'px'
+      img.width =img.width/2+'px'
+      var el = createMyElement('img',img)
+      document.body.append(el)
+      return el
+    }
+    imgs.forEach(it => {
+      it.src = 'https://xieranmaya.github.io/images/cats/'+it.url
+      it.url = ''
+      it.height = it.height/2+'px'
+      it.width =it.width/2+'px'
+      document.body.append(createMyElement('img',it))
+    })
+  }
+
+  var setTenImg = function(xml,count = 1){
+    if(count > 10)
+    return 1
+    setImg(xml,count).onload = (()=>{
+      setTenImg(xml,count+1)
+    })
+  }
+  
+
+  xmlHttpRequest('GET','https://xieranmaya.github.io/images/cats/cats.json',setTenImg)
+</script>
+</html>

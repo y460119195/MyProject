@@ -1,0 +1,86 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .view{
+      height: 300px;
+      width: 560px;
+      overflow: hidden;
+    }
+    .photo-wrap {
+      margin-top: 20px;
+    perspective: 6000px;
+    width: 960px;
+    }
+    .slider-container{
+      transform-style: preserve-3d;
+      position: relative;
+      height: 280px;
+      width: 500px;
+      display: inline-block;
+      margin-left: 30px;
+      border:1px solid black;
+      
+      transition: all 1s;
+    }
+    .sslider-container:hover{
+      transform: rotateY(180deg)
+    }
+    .slider-container img{
+      height: 280px;
+      width: 520px;
+      position: absolute;
+    }
+
+    img:nth-child(1) {
+    transform: rotateY(0deg) translateZ(358px);
+    }
+    img:nth-child(2) {
+    transform: rotateY(72deg) translateZ(358px);
+    }
+    img:nth-child(3) {
+    transform: rotateY(144deg) translateZ(358px);
+    }
+    img:nth-child(4) {
+    transform: rotateY(216deg) translateZ(358px);
+    }
+    img:nth-child(5) {
+    transform: rotateY(288deg) translateZ(358px);
+    }
+  </style>
+</head>
+<body>
+  <div class="view">
+      <div class="photo-wrap">
+          <div class="slider-container" style="transform: rotateY(0deg);">
+              <img src="https://img.alicdn.com/tfs/TB112H5dAL0gK0jSZFAXXcA9pXa-520-280.jpg_q90_.webp" alt="">
+              <img src="https://img.alicdn.com/simba/img/TB1zbm2bHj1gK0jSZFOSuw7GpXa.jpg" alt="">
+              <img src="https://img.alicdn.com/simba/img/TB1mJrTbeT2gK0jSZFvSutnFXXa.jpg" alt="">
+              <img src="https://img.alicdn.com/simba/img/TB14UmsdAH0gK0jSZPiSuuvapXa.jpg" alt="">
+              <img src="https://img.alicdn.com/tfs/TB1sesidbr1gK0jSZFDXXb9yVXa-520-280.jpg_q90_.webp" alt="">
+            </div>
+      </div>
+  </div>
+
+  <button onclick="roate()">123</button>
+  <button onclick="roate2()">234</button>
+  <script>
+    var roate = function(){
+      var slider = document.querySelector('.slider-container')
+      var deg = slider.style.transform.match(/[-]?[0-9]+/g)
+      deg = parseInt(deg[0])+72
+      slider.style.transform = "rotateY("+deg+"deg)"
+    }
+    var roate2 = function(){
+      var slider = document.querySelector('.slider-container')
+      var deg = slider.style.transform.match(/[-]?[0-9]+/g)
+      deg = parseInt(deg[0])-72
+      console.log(deg)
+      slider.style.transform = "rotateY("+deg+"deg)"
+    }
+  </script>
+</body>
+</html>

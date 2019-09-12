@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .viewArea{
+      width: 500px;
+      height: 280px;
+      overflow: hidden;
+    }
+    .slider-container{
+      width: 3640px;
+      height: 280px;
+      transition: all .3s;
+    }
+    img{
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="viewArea">
+    <div class="slider-container" style="transform: translate3d(-520px,0,0);transition:all .3s;">
+        <img src="https://img.alicdn.com/tfs/TB1sesidbr1gK0jSZFDXXb9yVXa-520-280.jpg_q90_.webp" alt="">
+        <img src="https://img.alicdn.com/tfs/TB112H5dAL0gK0jSZFAXXcA9pXa-520-280.jpg_q90_.webp" alt="">
+        <img src="https://img.alicdn.com/simba/img/TB1zbm2bHj1gK0jSZFOSuw7GpXa.jpg" alt="">
+        <img src="https://img.alicdn.com/simba/img/TB1mJrTbeT2gK0jSZFvSutnFXXa.jpg" alt="">
+        <img src="https://img.alicdn.com/simba/img/TB14UmsdAH0gK0jSZPiSuuvapXa.jpg" alt="">
+        <img src="https://img.alicdn.com/tfs/TB1sesidbr1gK0jSZFDXXb9yVXa-520-280.jpg_q90_.webp" alt="">
+        <img src="https://img.alicdn.com/tfs/TB112H5dAL0gK0jSZFAXXcA9pXa-520-280.jpg_q90_.webp" alt="">
+    </div>
+  </div>
+
+  <button onclick="prev()">1</button>
+  <button onclick="next()">2</button>
+  <script>
+    var slider = document.querySelector('.slider-container')
+    var prev = function (){
+      var l = slider.style.transform.match(/[-]?[0-9]*(?=px)/)[0]
+      slider.style.transform = 'translate3d('+(parseInt(l)+520)+'px,0,0)'
+      if(l == -520){
+        setTimeout(() => {
+        slider.style.transition = 'none'
+        slider.style.transform = 'translate3d(-2600px,0,0)'
+        slider.offsetWidth
+        },300)
+      }
+      slider.style.transition = 'all .3s'
+    }
+    var next = function (){
+      var l = slider.style.transform.match(/[-]?[0-9]*(?=px)/)[0]
+      console.log(l)
+      slider.style.transform = 'translate3d('+(l-520)+'px,0,0)'
+      if(l == -2600){
+        setTimeout(() => {
+        slider.style.transition = 'none'
+        slider.style.transform = 'translate3d(-520px,0,0)'
+        slider.offsetWidth
+        },300)
+      }
+      slider.style.transition = 'all .3s'
+    }
+  </script>
+</body>
+</html>

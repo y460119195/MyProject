@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+       margin: 0;
+       padding: 0;
+    }
+    .progress{
+      height: 1px;
+      background-color: blue;
+      width: 100%;
+      position: absolute;
+      margin-top: 0;
+    }
+    .box{
+      height: 100px;
+      width: 100px;
+      border: 1px solid #000;
+      left :0px;
+      top:0px;
+      position: absolute;
+    }
+    .rotationBox{
+      height: 50px;
+      width: 50px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <script>
+    var box = document.getElementsByClassName('box')[0]
+
+    // var moveBox = function(e){
+    //   window.oldX = e.pageX
+    //   window.oldY = e.pageY
+    //   box.addEventListener('mousemove',move)
+    // }
+
+    // var move = function(e){
+    //   var nowX = e.pageX
+    //   var nowY = e.pageY
+    //   var left = box.style.left.split('px')[0]
+    //   var top = box.style.top.split('px')[0]
+    //   box.style.left = ()+"px";
+    //   box.style.top = ()+"px";
+    //   // box.style.margin =(nowY-window.oldY)+"px 0px 0px "+
+    //   //                   (nowX-window.oldX)+"px"
+    // }
+  </script>
+
+  <div class="rotationBox"></div>
+  <script>
+    var rotationBox = document.querySelector('.roundBox') 
+  </script>
+</body>
+</html>

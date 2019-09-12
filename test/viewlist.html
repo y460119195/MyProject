@@ -1,0 +1,116 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .list-container {
+    height: 400px;
+    border: 5px solid red;
+    overflow-y: auto
+  }
+
+  .list-container .list {
+    position: relative;
+    list-style: none;
+    padding: 0;
+    soverflow-y: hidden;
+    margin: 0;
+
+  }
+
+  .list-container .list li {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 50px;
+  }
+</style>
+
+<body>
+  <div class="list-container">
+  </div>
+</body>
+<script>
+  class viewList {
+    constructor(el) {
+      this.el = el
+      this.body = this.createMyElement('ul', {'class':'list'})
+      //this.lastNum = 0
+      this.data= []
+
+      this.initViewList()
+    }
+
+    initViewList(){
+      this.body.style.height = 0
+      this.el.appendChild(this.body)
+      this.createListContent(0,9)
+      this.el.addEventListener('scroll',(e)=>{
+        var start = Math.floor(this.el.scrollTop/50)
+        var end = start + 9
+        this.body.innerHTML = ''
+        this.createListContent(start,end)
+      })
+    }
+
+    createMyElement(type, attr, content) {
+      var el = document.createElement(type)
+      attr = Object(attr)
+      if (attr) {
+        for (let key in attr) {
+          el.setAttribute(key, attr[key])
+        }
+      }
+      if (content != undefined) {
+        var t = document.createTextNode(content)
+        el.appendChild(t);
+      }
+      return el
+    }
+
+    getDataItems(StartNum, EndNum) {
+      var items = []
+      for (var i = StartNum; i < EndNum; i++) {
+        items.push(i)
+      }
+      return items
+    }
+
+    addDataList(StartNum,EndNum){
+      if(EndNum <= this.data.length)
+      return true
+      StartNum = Math.max(StartNum,this.data.length)
+      var dataGet = this.getDataItems(StartNum, EndNum)
+      var j = 0
+      for (var i = StartNum; i < EndNum; i++) {
+        this.data[i] = dataGet[j]
+        j++
+      }
+    }
+
+    createListContent(StartNum,EndNum){
+      this.addDataList(StartNum,EndNum)
+      for (var i = StartNum; i < EndNum; i++) {
+        var li = this.createMyElement('li',{},this.data[i])
+        li.style.top = i*50+'px'
+        if((i+1)*50 > this.body.style.height.split('px')[0]){
+          this.body.style.height = (i+1)*50 +'px'
+        }
+        this.body.appendChild(li) 
+      }
+    }
+
+
+  }
+</script>
+<script>
+  new viewList(document.querySelector('.list-container'))
+</script>
+</html>

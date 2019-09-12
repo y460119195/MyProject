@@ -1,0 +1,726 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      sbackground-color: rgb(245, 245, 245);
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: rgb(245, 245, 245);
+      font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    input {
+      outline: none;
+      border: none;
+      background-color: #fff;
+    }
+
+    /* input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+    } */
+    .title {
+      height: 140px;
+      width: 100%;
+      font-size: 100px;
+      font-weight: 100;
+      text-align: center;
+      color: rgba(175, 47, 47, 0.15);
+    }
+
+    .todoList-container {
+      margin: 0 auto;
+      position: relative;
+      max-width: 550px;
+      font-family: inherit;
+      background-color: #fff;
+    }
+
+    .todoList {
+      margin: 0 auto;
+      position: relative;
+      max-width: 550px;
+      font-family: inherit;
+    }
+
+    .todoList::before {
+      content: '❯';
+      position: absolute;
+      top: -55px;
+      left: -8px;
+      font-size: 22px;
+      color: #e6e6e6;
+      padding: 10px 27px 10px 27px;
+      transform: rotate(90deg)
+    }
+
+    .todoList.disnone::before {
+      display: none;
+    }
+
+    .todoList .toggle-all {
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      top: -50px;
+      opacity: 0;
+    }
+
+    .todoList.checked::before {
+      color: #4d4d4d;
+    }
+
+    .todoList li {
+      background-color: #fff;
+
+    }
+
+    .todoList-input {
+      box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+      padding: 16px 16px 16px 60px;
+    }
+
+    .todoList-container input {
+      line-height: 1.4em;
+      width: 100%;
+      font-size: 24px;
+      font-family: inherit;
+      font-weight: 300;
+      color: rgb(77, 77, 77);
+    }
+
+    .todoList-input input::placeholder {
+      color: rgb(245, 245, 245);
+      font-style: italic;
+      color: #e6e6e6;
+    }
+
+    .todolist-content {
+      position: relative;
+      line-height: 1.2em;
+      font-weight: 300;
+      padding: 0px 0px 0px 60px;
+      ssmargin-top: 2px;
+      border-top: 1px solid #e6e6e6;
+
+    }
+
+    .todolist-content:hover .destory {
+      display: block;
+    }
+
+    .todolist-content span {
+      display: block;
+      font-size: 24px;
+      padding: 15px 0px;
+      line-height: 1.2em;
+      background-color: #fff;
+    }
+
+    .todolist-content span::before {
+      content: '';
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      left: 0px;
+      top: 9px;
+      background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+      background-repeat: no-repeat;
+      sbackground-position: center left;
+    }
+
+    .todolist-content .content {
+      display: none;
+      z-index: 20;
+      padding: 14px 15px;
+      line-height: 1.2em;
+      border: 1px solid #999;
+      box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2)
+    }
+
+    .todolist-content .check {
+      position: absolute;
+      left: 0px;
+      top: 9px;
+      border: none;
+      height: 40px;
+      width: 40px;
+      z-index: 10;
+      opacity: 0;
+    }
+
+    .todolist-content.hidden {
+      display: none;
+    }
+
+    .todolist-content.completed span::before {
+      background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');
+    }
+
+    .todolist-content.completed span {
+      text-decoration: line-through;
+      color: #d9d9d9;
+    }
+
+    .todolist-content .edit {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 44px;
+      width: calc(100% - 44px);
+    }
+
+    .todolist-content .destory {
+      display: none;
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      outline: none;
+      background-color: #fff;
+      border: 0;
+      height: 40px;
+      width: 40px;
+      margin: auto 0;
+      font-size: 30px;
+      color: #cc9a9a;
+      margin-bottom: 11px;
+      font-weight: 200;
+      transition: color .2s
+    }
+
+    .todolist-content .destory::before {
+      content: '×';
+    }
+
+    .todolist-content .destory:hover::before {
+      color: #af5b5e;
+    }
+
+    .todolist-footer {
+      border-top: 1px solid #e6e6e6;
+      padding: 10px 15px;
+      font-weight: 300;
+      background-color: #fff;
+      color: #777;
+      sheight: 20px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+        0 8px 0 -3px #f6f6f6,
+        0 9px 1px -3px rgba(0, 0, 0, 0.2),
+        0 16px 0 -6px #f6f6f6,
+        0 17px 2px -6px rgba(0, 0, 0, 0.2)
+    }
+
+    .todolist-footer .todo-count strong {
+      font-weight: 300;
+      margin: 0 2px;
+    }
+
+    .todolist-footer .functions {
+      float: right;
+      background-color: #fff;
+      line-height: 1.2em;
+    }
+
+    .todolist-footer .functions li {
+      border: 1px solid transparent;
+      font-size: 14px;
+      float: left;
+      padding: 3px 7px;
+      border-radius: 3px;
+      margin: -3px 3px;
+      background-color: #fff;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    .todolist-footer .functions li:hover {
+      border-color: rgba(175, 47, 47, 0.2);
+    }
+
+    .todolist-footer .functions li.active {
+      border-color: rgba(175, 47, 47, 0.2);
+    }
+
+    .todolist-footer .functions button {
+      font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #777;
+      padding-right: 0;
+      margin-right: 0;
+      margin-left: 60px;
+      border-color: transparent;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .todolist-footer .functions button:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <style>
+    .footer{
+      display: block;
+      margin-top:80px;
+      text-align: center;
+      font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: #777;
+      margin-bottom:30px;
+    }
+    .footer a{
+      color: #777;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="title">todos</div>
+  <div class="todoList-container">
+    <!-- <div class="todoList-input">
+      <input type="text" placeholder="What needs to be done?">
+    </div>
+    <ul class="todoList">
+      <input type="checkbox" class="toggle-all" name="" id="">
+      <li class="todolist-content">
+        <input type="checkbox" class="check" name="" id="">
+        <span>What needs to be done?</span>
+        <input type="text" class="content" value="What needs to be done?">
+        <button class="destory"></button>
+      </li>
+      <li class="todolist-content">
+        <span>What needs to be done?</span>
+        <input type="text" class="content" value="What needs to be done?">
+      </li>
+    </ul>
+    <div class="todolist-footer">
+      <span class="todo-count"> <strong>1</strong> items left</span>
+      <ul class="functions">
+        <li>All</li>
+        <li>Active</li>
+        <li>Completed</li>
+        <button>ClearCompleted</button>
+      </ul>
+    </div> -->
+  </div>
+  <p  class="footer">copy from - <a href="http://todomvc.com/examples/backbone/#/">todomvc</a></p>
+
+  <script>
+    class todoList {
+      
+      constructor(el, options) {
+        this.el = el
+        this.todoCount = {
+          "all": 0,
+          "completed": 0,
+          "active": 0
+        }
+        this.todoStatus = 'all'
+        this.input = this.creatToDoListInput()
+        this.todoList = this.creatToDoList()
+        this.footer = null
+        this.bindingAdd(this.input.querySelector('input'))
+        this.preloading()
+        this.updateToggleAllStatus()
+        this.funEdit = e =>{this.toDoList_Edit(e)}
+        //this.funEdit = this.toDoList_Edit.bind(this)
+      }
+
+      createMyElement(type, attr, content) {
+        var el = document.createElement(type)
+        attr = Object(attr)
+        if (attr) {
+          for (let key in attr) {
+            el.setAttribute(key, attr[key])
+          }
+        }
+        if (content) {
+          var t = document.createTextNode(content)
+          el.appendChild(t);
+        }
+        return el
+      }
+
+      creatToDoListInput() {
+        var div = this.createMyElement('div', {
+          'class': 'todoList-input'
+        }, '')
+        var input = this.createMyElement('input', {
+          'type': 'text',
+          'placeholder': 'What needs to be done?'
+        }, '')
+        div.append(input)
+        this.el.append(div)
+        return div
+      }
+
+      creatToDoListFooter() {
+        var div = this.createMyElement('div', {
+          'class': 'todolist-footer'
+        }, '')
+        var span = this.createMyElement('span', {
+          'class': 'todo-count'
+        }, '')
+        span.append(this.createMyElement('strong', {}, this.todoCount))
+        span.append(document.createTextNode('items left'))
+        var ul = this.createMyElement('ul', {
+          'class': 'functions'
+        }, '')
+        var f1 = this.createMyElement('li', {
+          'class': 'active'
+        }, 'All')
+        this.bindingAll(f1)
+        var f2 = this.createMyElement('li', {}, 'Active')
+        this.bindingActive(f2)
+        var f3 = this.createMyElement('li', {}, 'Completed')
+        this.bindingCompleted(f3)
+        var f4 = this.createMyElement('button', {}, 'ClearCompleted')
+        this.bindingClearCompleted(f4)
+        ul.append(f1, f2, f3, f4)
+        div.append(span, ul)
+        this.el.append(div)
+        this.updateToggleAllStatus()
+        return div
+      }
+
+      creatToDoList() {
+        var ul = this.createMyElement('ul', {
+          'class': 'todoList'
+        })
+        var input = this.createMyElement('input', {
+          'type': 'checkbox',
+          'class': 'toggle-all'
+        }, '')
+        this.bindingSelectAll(input)
+        ul.append(input)
+        this.el.append(ul)
+        return ul
+      }
+
+      creatToDoListContent(value, id) {
+        var data_id = id || this.creatId()
+        if (!id)
+          this.saveToStorge(data_id, value, false)
+        var li = this.createMyElement('li', {
+          'class': 'todolist-content',
+          'data-id': data_id
+        })
+        var input1 = this.createMyElement('input', {
+          'type': 'checkbox',
+          'class': 'check'
+        }, '')
+        this.bindingChecked(input1)
+        var span = this.createMyElement('span', {}, value)
+        var input2 = this.createMyElement('input', {
+          'type': 'text',
+          'class': 'content',
+          'value': value
+        }, '')
+        var btn = this.createMyElement('button', {
+          'class': 'destory'
+        }, '')
+        li.append(input1, span, input2, btn)
+        this.bindingEdit(li)
+        this.bindingDestory(li)
+        this.todoList.append(li)
+        this.todoCount.all++
+        this.todoCount.active++
+        if (!this.footer) {
+          this.footer = this.creatToDoListFooter()
+        }
+        this.updateCount(this.todoStatus)
+        this.updateToggleAllStatus()
+        return li
+      }
+
+      creatId() {
+        return new Date().getTime()
+      }
+      
+      // todolist词条修改
+      toDoList_Edit(e) {
+        console.log(e)
+        if (e.keyCode) {
+          if (e.keyCode != 13)
+            return false
+        }else{
+          if (e.target.matches('.todolist-content .edit'))
+          return false
+        }
+        var editContent = document.querySelector('.todolist-content .edit')
+        if (editContent) {
+          editContent.parentNode.querySelector('span').textContent = editContent.value
+          this.saveToStorge(editContent.parentNode.getAttribute('data-id'),editContent.value)
+          editContent.classList.remove('edit')
+          var fun = this.funEdit
+          window.removeEventListener('click', fun)
+          window.removeEventListener('click', fun)
+        }
+      }
+
+      //回车添加词条
+      bindingAdd(obj) {
+        obj.addEventListener('keydown', (e) => {
+          if (e.keyCode === 13) {
+            var value = obj.value
+            if (!value)
+              return true
+            var el = this.creatToDoListContent(value)
+            obj.value = ''
+          }
+        })
+      }
+
+      bindingEdit(obj) {
+        obj.addEventListener('dblclick', (e) => {
+          var editContent = e.target
+          if (e.target.tagName == 'LI')
+            editContent = e.target.querySelector('.content')
+          else if (e.target.tagName == 'SPAN')
+            editContent = e.target.nextElementSibling
+          else {
+            if (!e.target.matches('.todolist-content'))
+              return false
+          }
+          if (!editContent.classList.contains('edit')) {
+            editContent.classList.add('edit')
+            editContent.focus()
+            editContent.selectionStart = editContent.selectionEnd = editContent.value.length
+            console.log(editContent.selectionStart)
+            var fun = this.funEdit
+            window.addEventListener('click', fun)
+            window.addEventListener('keydown', fun)
+          }
+        })
+      }
+
+      //勾选 - 已做未做 修改状态下勾选框消失
+
+      //remove
+      removeList(obj) { //一般是destory按钮
+        var el = obj
+        while (!el.matches('.todolist-content'))
+          el = el.parentNode
+        var type = ~~el.matches('.completed') ? 'completed' : 'active';
+        var data_id = el.getAttribute('data-id')
+        this.deleteStorge(data_id)
+        this.todoCount.all--
+        this.todoCount[type]--
+        this.updateCount(this.todoStatus)
+        el.remove()
+      }
+
+      bindingDestory(obj) {
+        var btn_destory = obj.querySelector('.destory')
+        btn_destory.addEventListener('click', e => {
+          this.removeList(e.target)
+          this.updateToggleAllStatus()
+        })
+      }
+
+      bindingChecked(obj) {
+        obj.addEventListener('click', e => {
+          if (!obj.checked) {
+            obj.parentNode.classList.remove('completed')
+            this.todoCount['active']++
+            this.todoCount['completed']--
+            if (this.todoStatus == 'completed')
+              obj.parentNode.classList.add('hidden')
+          } else {
+            obj.parentNode.classList.add('completed')
+            this.todoCount['active']--
+            this.todoCount['completed']++
+            if (this.todoStatus == 'active')
+              obj.parentNode.classList.add('hidden')
+          }
+          this.saveToStorge(obj.parentNode.getAttribute('data-id'))
+          this.updateCount(this.todoStatus)
+          this.updateToggleAllStatus()
+        })
+      }
+
+      bindingAll(obj) {
+        obj.addEventListener('click', e => {
+          this.changeListStatus('all', e.target)
+          this.todoList.querySelectorAll('li').forEach(it => it.classList.remove('hidden'))
+          this.updateCount('all')
+        })
+      }
+
+      bindingActive(obj) {
+        obj.addEventListener('click', e => {
+          this.changeListStatus('active', e.target)
+          this.todoList.querySelectorAll('li').forEach(it => {
+            if (it.classList.contains('completed'))
+              it.classList.add('hidden')
+            else
+              it.classList.remove('hidden')
+            this.updateCount('active')
+          })
+        })
+      }
+
+      bindingCompleted(obj) {
+        obj.addEventListener('click', e => {
+          this.changeListStatus('completed', e.target)
+          this.todoList.querySelectorAll('li').forEach(it => {
+            if (!it.classList.contains('completed'))
+              it.classList.add('hidden')
+            else
+              it.classList.remove('hidden')
+            this.updateCount('completed')
+          })
+        })
+      }
+
+      bindingClearCompleted(obj) {
+        obj.addEventListener('click', e => {
+          this.todoList.querySelectorAll('li').forEach(it => {
+            if (it.classList.contains('completed'))
+              this.removeList(it)
+          })
+          this.updateToggleAllStatus()
+        })
+      }
+
+      bindingSelectAll(obj) {
+        obj.addEventListener('click', e => {
+          if (!e.target.checked) {
+            this.todoList.classList.remove('checked')
+            this.todoList.querySelectorAll('li').forEach(it => {
+              if (it.classList.contains('completed')) {
+                it.classList.remove('completed')
+                it.querySelector('.check').checked = false
+                this.todoCount['active']++
+                this.todoCount['completed']--
+                this.saveToStorge(it.getAttribute('data-id'))
+              }
+            })
+          } else {
+            this.todoList.classList.add('checked')
+            this.todoList.querySelectorAll('li').forEach(it => {
+              if (!it.classList.contains('completed')) {
+                it.classList.add('completed')
+                it.querySelector('.check').checked = true
+                this.todoCount['active']--
+                this.todoCount['completed']++
+                this.saveToStorge(it.getAttribute('data-id'))
+              }
+            })
+          }
+        })
+      }
+
+      changeListStatus(type, el) {
+        if (this.todoStatus == type)
+          return true
+        this.todoStatus = type
+        this.footer.querySelectorAll('li').forEach(it => {
+          it.classList.remove('active')
+        })
+        el.classList.add('active')
+      }
+
+      updateCount(type) {
+        this.footer.querySelector('strong').textContent = this.todoCount[type]
+      }
+
+      saveToStorge(id, content, status) {
+        if (status == undefined) {
+          var data = JSON.parse(localStorage.getItem(id))
+          if(content){
+            data.content = content
+          }else{
+            data.status = !data.status
+          }
+          localStorage.removeItem(id)
+          localStorage.setItem(id, JSON.stringify(data))
+        } else {
+          var list = localStorage.getItem('todolist')
+          if (!list) {
+            list = []
+            list[0] = id
+          } else {
+            list = list.split(',')
+            list.push(id)
+          }
+          localStorage.setItem('todolist', list)
+          localStorage.setItem(id, JSON.stringify({
+            content,
+            status
+          }))
+        }
+      }
+
+      deleteStorge(id) {
+        var list = localStorage.getItem('todolist')
+        list = list.split(',')
+        var index = list.indexOf(id)
+        console.log(index)
+        if (index == -1)
+          return false
+        list.splice(index, 1)
+        localStorage.setItem('todolist', list)
+        localStorage.removeItem(id)
+      }
+
+      updateToggleAllStatus() {
+        if (this.todoCount.all == 0) {
+          this.todoList.classList.add('disnone')
+          if (this.footer) {
+            this.footer.remove()
+            this.footer = null
+          }
+        } else {
+          this.todoList.classList.remove('disnone')
+          if (this.todoCount.all == this.todoCount.completed) {
+            this.todoList.classList.add('checked')
+            this.todoList.querySelector('.toggle-all').checked = true
+          } else {
+            this.todoList.classList.remove('checked')
+            this.todoList.querySelector('.toggle-all').checked = false
+          }
+        }
+      }
+
+      preloading() {
+        var list = localStorage.getItem('todolist')
+        if (!list)
+          return true
+        list = list.split(',')
+        list.forEach(it => {
+          var storge = JSON.parse(localStorage.getItem(it))
+          var value = storge.content
+          var status = storge.status
+          var content = this.creatToDoListContent(value, it)
+          if (Boolean(status)) {
+            content.classList.add('completed')
+            content.querySelector('.check').checked = true
+            this.todoCount['active']--
+            this.todoCount['completed']++
+          }
+        })
+      }
+    }
+  </script>
+  <script>
+   new todoList(document.querySelector('.todoList-container'))
+  </script>
+</body>
+
+</html>
