@@ -164,20 +164,28 @@ class lodash {
     }
     return newArray
   }
-  fromPairs(){
-
+  fromPairs(pairs){
+    var result = {}
+    pairs.forEach((it, i)=>{
+      result[it[0]] = pairs[i][1]
+    })
+    return result
   }
-  head(){
-
+  head(array){
+    return array[0]
   }
-  indexOf(){
-
+  indexOf(array,value,fromIndex = 0){
+    var length = array.length
+    for(var i = fromIndex;i<length ;i++){
+      if(array[i] === value )
+      return i
+    }
   }
-  initial(){
-
+  initial(array){
+    return array.slice(0,-1)
   }
-  intersection(){
-
+  intersection(...ary){
+    
   }
 
 }
